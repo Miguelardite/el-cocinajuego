@@ -1,0 +1,89 @@
+using NUnit.Framework;
+using UnityEngine;
+using System.Collections.Generic;
+
+public class BlinkScript : MonoBehaviour
+{
+    public Vector3 blinkPositionArriba;
+    public Vector3 blinkPositionDerecha;
+    public Vector3 blinkPositionIzquierda;
+    public Vector3 blinkPositionTrasera;
+    public Vector3 blinkPositionFrontal;
+    public Vector3 blinkRotationArriba;
+    public Vector3 blinkRotationDerecha;
+    public Vector3 blinkRotationIzquierda;
+    public Vector3 blinkRotationTrasera;
+    public Vector3 blinkRotationFrontal;
+
+    public float blinkDuration; // Duration of the blink effect
+
+    public List<Vector3> blinkPositions;
+    public List<Vector3> blinkRotations;
+
+    private void Awake()
+    {
+        blinkDuration = 0.125f;
+        blinkPositions = new List<Vector3>
+        {
+            blinkPositionFrontal,
+            blinkPositionDerecha,
+            blinkPositionTrasera,
+            blinkPositionIzquierda
+        };
+        blinkRotations = new List<Vector3>
+        {
+            blinkRotationFrontal,
+            blinkRotationDerecha,
+            blinkRotationTrasera,
+            blinkRotationIzquierda
+        };
+    }
+
+    public void Blink(int cameraIndex)
+    {
+        if (cameraIndex < 0 || cameraIndex >= blinkPositions.Count)
+        {
+            Debug.LogError("Invalid camera index for blink effect.");
+            return;
+        }
+        Vector3 targetPosition = blinkPositions[cameraIndex];
+        Vector3 targetRotation = blinkRotations[cameraIndex];
+        StartCoroutine(BlinkCoroutine(targetPosition, targetRotation));
+    }
+    public void BlinkArriba()
+    {
+        StartCoroutine(BlinkCoroutine(blinkPositionArriba, blinkRotationArriba));
+    }
+
+    private System.Collections.IEnumerator BlinkCoroutine(Vector3 targetPosition, Vector3 targetRotation)
+    {
+        gameObject.transform.position = targetPosition;
+        gameObject.transform.rotation = Quaternion.Euler(targetRotation);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        //haz que el sprite haga un blur 
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0); // Optional: make it semi-transparent
+        yield return new WaitForSeconds(blinkDuration/4);
+        StartCoroutine(BlurCoroutine(0.5f, true));
+    }
+    private System.Collections.IEnumerator BlurCoroutine(float blurValue, bool goingup)
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, blurValue);
+        yield return new WaitForSeconds(blinkDuration / 4);
+
+        Debug.Log(gameObject.GetComponent<SpriteRenderer>().color.a);
+        if (blurValue < 1f && goingup) 
+        {
+            StartCoroutine(BlurCoroutine(blurValue+0.5f, true));
+        }
+        else if (blurValue > 0)
+        {
+            StartCoroutine(BlurCoroutine(blurValue - 0.5f, false));
+        }
+        else if (blurValue <= 0)
+        {
+            Debug.Log("Blink effect completed, resetting sprite.");
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1); // Reset transparency
+            gameObject.GetComponent<SpriteRenderer>().enabled = false; // Disable the sprite after the blink effect
+        }
+    }
+}
