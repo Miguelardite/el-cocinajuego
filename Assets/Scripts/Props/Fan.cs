@@ -30,7 +30,7 @@ public class Fan : PropGeneric
         else
         {
             Debug.Log("Apagado");
-            InvokeRepeating("ItsHot", 0f, Random.Range(5f, 10f));
+            InvokeRepeating("ItsHot", 0f, Random.Range(15f, 25f));
             if (audioSource != null)
             {
                 audioSource.Stop();
@@ -41,7 +41,7 @@ public class Fan : PropGeneric
     {
         if (postIt != null)
         {
-            postIt.GetComponent<TextMeshProUGUI>().text = "Hace calor";
+            postIt.GetComponent<toDoList>().iniciaTarea("Hace calor");
         }
     }
 }
