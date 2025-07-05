@@ -13,7 +13,7 @@ public class toDoList : MonoBehaviour
     private float elapsed = 0f;
     private Material matInstance;
 
-    void Start()
+    void Awake()
     {
         matInstance = Instantiate(tmpText.fontMaterial);
         tmpText.fontMaterial = matInstance;
