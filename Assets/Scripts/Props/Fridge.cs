@@ -22,7 +22,7 @@ public class Fridge : PropGeneric
     }
     private void Update()
     {
-        if (freezeChicken && !isActive && chicken.GetComponent<Chicken>().frozenPercent < 100)
+        if (freezeChicken && !isActive && chicken.GetComponent<Chicken>().frozenPercent < 50)
         {
             chicken.GetComponent<Chicken>().frozenPercent += Time.deltaTime;
         }

@@ -49,7 +49,7 @@ public class Chicken : MonoBehaviour
         if (followMouse)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
+            mousePos.z = 22;
             transform.position = mousePos;
         }
         ChangeSprite();
@@ -64,7 +64,7 @@ public class Chicken : MonoBehaviour
         }
         else
         {
-            if (cookingPercent > 100)
+            if (cookingPercent > 70)
             {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.black;
                 Debug.Log("Pollo quemado");
