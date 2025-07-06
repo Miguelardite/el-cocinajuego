@@ -10,6 +10,7 @@ public abstract class PropGeneric : MonoBehaviour
     public void OnMouseDown()
     {
         isActive = !isActive;
+
         if (isActive)
         {
             Debug.Log("Abierto");
