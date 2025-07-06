@@ -3,8 +3,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fan : PropGeneric
+public class Fan : MonoBehaviour
 {
+    bool isActive; // Indica si el ventilador está activo o no
+    public string propMisionName; // Nombre de la misión asociada al ventilador
     public GameObject postIt;
     public AudioSource audioSource;
 
@@ -14,8 +16,12 @@ public class Fan : PropGeneric
         propMisionName = "Apaga el ventilador";
         //el sonido del ventilador se reproduce por defecto
     }
-
-    public override void Action()
+    public void OnMouseDown()
+    {
+        isActive = !isActive; // Cambia el estado del ventilador al hacer clic
+        Action(); // Llama al método Action para manejar el comportamiento del ventilador
+    }
+    public void Action()
     {
         //si el ventilador está activo, hará ruido y ejecutará la animación. Si está apagado, cada cierto tiempo
         //saldrán mensajes de que hace calor
