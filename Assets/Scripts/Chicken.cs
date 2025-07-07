@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class Chicken : MonoBehaviour
@@ -6,6 +7,7 @@ public class Chicken : MonoBehaviour
     public float cookingPercent;
     public float seasoning;
     public bool followMouse;
+    public Sprite[] sprites;
     public void Awake()
     {
         followMouse = false;
@@ -69,21 +71,21 @@ public class Chicken : MonoBehaviour
     {
         if (frozenPercent > 0)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[0];
         }
         else
         {
             if (cookingPercent > 70)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+                gameObject.GetComponent<SpriteRenderer>().sprite = sprites[3];
             }
             else if (cookingPercent >= 0 && cookingPercent <= 50)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                gameObject.GetComponent<SpriteRenderer>().sprite = sprites[1];
             }
             else if (cookingPercent > 50 && cookingPercent <= 70)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                gameObject.GetComponent<SpriteRenderer>().sprite = sprites[2];
             }
         }
     }

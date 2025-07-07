@@ -5,22 +5,35 @@ using UnityEngine.UI;
 
 public class Fan : MonoBehaviour
 {
-    bool isActive; // Indica si el ventilador está activo o no
-    public string propMisionName; // Nombre de la misión asociada al ventilador
+    bool isActive; 
+    public string propMisionName; 
     public GameObject postIt;
     public AudioSource audioSource;
-
+    public Sprite[] sprites;
+    public float timer;
     private void Awake()
     {
         isActive = true;
         propMisionName = "Apaga el ventilador";
-        //el sonido del ventilador se reproduce por defecto
+    }
+    private void Update()
+    {
+        if (isActive)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 0.1f)
+            {
+                timer = 0f;
+                transform.Rotate(0f, 0f, 90f);
+            }
+        }
     }
     public void OnMouseDown()
     {
-        isActive = !isActive; // Cambia el estado del ventilador al hacer clic
-        Action(); // Llama al método Action para manejar el comportamiento del ventilador
+        isActive = !isActive;
+        Action(); 
     }
+    
     public void Action()
     {
         //si el ventilador está activo, hará ruido y ejecutará la animación. Si está apagado, cada cierto tiempo
@@ -31,6 +44,7 @@ public class Fan : MonoBehaviour
             if (audioSource != null)
             {
                 audioSource.Play();
+                GetComponent<SpriteRenderer>().sprite = sprites[0];
             }
         }
         else
@@ -40,6 +54,7 @@ public class Fan : MonoBehaviour
             if (audioSource != null)
             {
                 audioSource.Stop();
+                GetComponent<SpriteRenderer>().sprite = sprites[1];
             }
         }
     }
