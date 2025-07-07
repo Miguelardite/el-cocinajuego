@@ -9,27 +9,36 @@ public abstract class PropGeneric : MonoBehaviour
 
     public void OnMouseDown()
     {
-        isActive = !isActive;
-
-        if (isActive)
+        if (HoldManager.Instance.heldObject == null)
         {
-            Debug.Log("Abierto");
-            gameObject.tag = tagChicken;
-            if (chicken.transform.parent == transform)
+            isActive = !isActive;
+
+            if (isActive)
             {
-                chicken.SetActive(true);
+                Debug.Log("Abierto");
+                GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.tag = tagChicken;
+                if (chicken.transform.parent == transform)
+                {
+                    chicken.SetActive(true);
+                }
             }
+            else
+            {
+                Debug.Log("Cerrado");
+                GetComponent<SpriteRenderer>().enabled = true;
+                gameObject.tag = "Untagged";
+                if (chicken.transform.parent == transform)
+                {
+                    chicken.SetActive(false);
+                }
+            }
+            Action();
         }
         else
         {
-            Debug.Log("Cerrado");
-            gameObject.tag = "Untagged";
-            if (chicken.transform.parent == transform)
-            {
-                chicken.SetActive(false);
-            }
+            Debug.Log("Debes tener las manos vacías para abrir y cerrar objetos");
         }
-        Action();
     }
     public abstract void Action();
 }

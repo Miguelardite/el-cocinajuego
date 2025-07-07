@@ -4,8 +4,8 @@ public class Chicken : MonoBehaviour
 {
     public float frozenPercent;
     public float cookingPercent;
+    public float seasoning;
     public bool followMouse;
-    private Vector3 mouseWorldPos;
     public void Awake()
     {
         followMouse = false;
@@ -14,14 +14,15 @@ public class Chicken : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1))
         {
             SetCursor();
-            if (Vector2.Distance(transform.position, mouseWorldPos) < 3f)
+            if (Vector2.Distance(transform.position, HoldManager.Instance.mouseWorldPos) < 3f)
             {
                 if (!followMouse)
                 {
                     transform.SetParent(null);
+                    HoldManager.Instance.heldObject = gameObject;
                     followMouse = true;
                     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mousePos.z = 0f;
@@ -42,6 +43,7 @@ public class Chicken : MonoBehaviour
                             followMouse = false;
                             dropped = true;
                             Debug.Log("Pollo soltado en: " + collider.name);
+                            HoldManager.Instance.heldObject = null;
                             break;
                         }
                     }
@@ -57,7 +59,7 @@ public class Chicken : MonoBehaviour
         if (followMouse)
         {
             SetCursor();
-            transform.position = mouseWorldPos;
+            transform.position = HoldManager.Instance.mouseWorldPos;
         }
 
         ChangeSprite();
@@ -90,7 +92,7 @@ public class Chicken : MonoBehaviour
         Camera mainCamera = Camera.main;
         Vector3 mouseScreenPos = Input.mousePosition;
         mouseScreenPos.z = Mathf.Abs(mainCamera.transform.position.z);
-        mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
-        mouseWorldPos.z = transform.position.z;
+        HoldManager.Instance.mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
+        HoldManager.Instance.mouseWorldPos.z = transform.position.z;
     }
 }
