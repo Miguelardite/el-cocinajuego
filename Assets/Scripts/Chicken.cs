@@ -4,6 +4,7 @@ public class Chicken : MonoBehaviour
 {
     public float frozenPercent;
     public float cookingPercent;
+    public float seasoning;
     public bool followMouse;
     public void Awake()
     {
@@ -13,50 +14,52 @@ public class Chicken : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1))
         {
-            if (!followMouse)
+            SetCursor();
+            if (Vector2.Distance(transform.position, HoldManager.Instance.mouseWorldPos) < 3f)
             {
-                transform.SetParent(null);
-                followMouse = true;
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mousePos.z = 0f;
-                transform.position = mousePos;
-            }
-            else
-            {
-                bool dropped = false;
-
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
-
-                foreach (Collider2D collider in colliders)
+                if (!followMouse)
                 {
-                    if (collider.CompareTag("CanDropChickenHere"))
-                    {
-                        transform.SetParent(collider.transform);
-                        transform.position = collider.transform.position;
-                        followMouse = false;
-                        dropped = true;
-                        Debug.Log("Pollo soltado en: " + collider.name);
-                        break;
-                    }
+                    transform.SetParent(null);
+                    HoldManager.Instance.heldObject = gameObject;
+                    followMouse = true;
+                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mousePos.z = 0f;
+                    transform.position = mousePos;
                 }
-
-                if (!dropped)
+                else
                 {
-                    Debug.Log("No se puede soltar en esta zona.");
+                    bool dropped = false;
+
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+
+                    foreach (Collider2D collider in colliders)
+                    {
+                        if (collider.CompareTag("CanDropChickenHere"))
+                        {
+                            transform.SetParent(collider.transform);
+                            transform.position = collider.transform.position;
+                            followMouse = false;
+                            dropped = true;
+                            Debug.Log("Pollo soltado en: " + collider.name);
+                            HoldManager.Instance.heldObject = null;
+                            break;
+                        }
+                    }
+
+                    if (!dropped)
+                    {
+                        Debug.Log("No se puede soltar en esta zona.");
+                    }
                 }
             }
         }
 
         if (followMouse)
         {
-            Camera mainCamera = Camera.main;
-            Vector3 mouseScreenPos = Input.mousePosition;
-            mouseScreenPos.z = Mathf.Abs(mainCamera.transform.position.z);
-            Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
-            mouseWorldPos.z = transform.position.z;
-            transform.position = mouseWorldPos;
+            SetCursor();
+            transform.position = HoldManager.Instance.mouseWorldPos;
         }
 
         ChangeSprite();
@@ -83,5 +86,13 @@ public class Chicken : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
+    }
+    void SetCursor()
+    {
+        Camera mainCamera = Camera.main;
+        Vector3 mouseScreenPos = Input.mousePosition;
+        mouseScreenPos.z = Mathf.Abs(mainCamera.transform.position.z);
+        HoldManager.Instance.mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
+        HoldManager.Instance.mouseWorldPos.z = transform.position.z;
     }
 }
