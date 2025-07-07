@@ -4,7 +4,7 @@ public class Washing : MonoBehaviour
 {
     private float elapsed;
     private bool active, first;
-    public AudioSource audio;
+    public AudioSource audio, centrif, abrir;
     public bool completada;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +25,7 @@ public class Washing : MonoBehaviour
             audio.Play();
             first = false;
             active = true;
+            if (centrif != null) centrif.Stop();
         }
     }
 
@@ -35,6 +36,7 @@ public class Washing : MonoBehaviour
             active = false;
             completada = true;
             if (audio != null) audio.Stop();
+            if (abrir != null) abrir.Play();
             //añadir cambio de sprite, animacion, lo que sea
         }
     }
