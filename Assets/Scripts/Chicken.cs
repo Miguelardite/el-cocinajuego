@@ -5,6 +5,7 @@ public class Chicken : MonoBehaviour
     public float frozenPercent;
     public float cookingPercent;
     public bool followMouse;
+    private Vector3 mouseWorldPos;
     public void Awake()
     {
         followMouse = false;
@@ -15,47 +16,47 @@ public class Chicken : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!followMouse)
+            SetCursor();
+            if (Vector2.Distance(transform.position, mouseWorldPos) < 3f)
             {
-                transform.SetParent(null);
-                followMouse = true;
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mousePos.z = 0f;
-                transform.position = mousePos;
-            }
-            else
-            {
-                bool dropped = false;
-
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
-
-                foreach (Collider2D collider in colliders)
+                if (!followMouse)
                 {
-                    if (collider.CompareTag("CanDropChickenHere"))
-                    {
-                        transform.SetParent(collider.transform);
-                        transform.position = collider.transform.position;
-                        followMouse = false;
-                        dropped = true;
-                        Debug.Log("Pollo soltado en: " + collider.name);
-                        break;
-                    }
+                    transform.SetParent(null);
+                    followMouse = true;
+                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mousePos.z = 0f;
+                    transform.position = mousePos;
                 }
-
-                if (!dropped)
+                else
                 {
-                    Debug.Log("No se puede soltar en esta zona.");
+                    bool dropped = false;
+
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+
+                    foreach (Collider2D collider in colliders)
+                    {
+                        if (collider.CompareTag("CanDropChickenHere"))
+                        {
+                            transform.SetParent(collider.transform);
+                            transform.position = collider.transform.position;
+                            followMouse = false;
+                            dropped = true;
+                            Debug.Log("Pollo soltado en: " + collider.name);
+                            break;
+                        }
+                    }
+
+                    if (!dropped)
+                    {
+                        Debug.Log("No se puede soltar en esta zona.");
+                    }
                 }
             }
         }
 
         if (followMouse)
         {
-            Camera mainCamera = Camera.main;
-            Vector3 mouseScreenPos = Input.mousePosition;
-            mouseScreenPos.z = Mathf.Abs(mainCamera.transform.position.z);
-            Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
-            mouseWorldPos.z = transform.position.z;
+            SetCursor();
             transform.position = mouseWorldPos;
         }
 
@@ -83,5 +84,13 @@ public class Chicken : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
+    }
+    void SetCursor()
+    {
+        Camera mainCamera = Camera.main;
+        Vector3 mouseScreenPos = Input.mousePosition;
+        mouseScreenPos.z = Mathf.Abs(mainCamera.transform.position.z);
+        mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
+        mouseWorldPos.z = transform.position.z;
     }
 }
