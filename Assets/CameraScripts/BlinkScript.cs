@@ -9,16 +9,10 @@ public class BlinkScript : MonoBehaviour
     public Vector3 blinkPositionIzquierda;
     public Vector3 blinkPositionTrasera;
     public Vector3 blinkPositionFrontal;
-    public Vector3 blinkRotationArriba;
-    public Vector3 blinkRotationDerecha;
-    public Vector3 blinkRotationIzquierda;
-    public Vector3 blinkRotationTrasera;
-    public Vector3 blinkRotationFrontal;
 
     public float blinkDuration; // Duration of the blink effect
 
     public List<Vector3> blinkPositions;
-    public List<Vector3> blinkRotations;
 
     private void Awake()
     {
@@ -30,13 +24,6 @@ public class BlinkScript : MonoBehaviour
             blinkPositionTrasera,
             blinkPositionIzquierda
         };
-        blinkRotations = new List<Vector3>
-        {
-            blinkRotationFrontal,
-            blinkRotationDerecha,
-            blinkRotationTrasera,
-            blinkRotationIzquierda
-        };
     }
 
     public void Blink(int cameraIndex)
@@ -47,18 +34,16 @@ public class BlinkScript : MonoBehaviour
             return;
         }
         Vector3 targetPosition = blinkPositions[cameraIndex];
-        Vector3 targetRotation = blinkRotations[cameraIndex];
-        StartCoroutine(BlinkCoroutine(targetPosition, targetRotation));
+        StartCoroutine(BlinkCoroutine(targetPosition));
     }
     public void BlinkArriba()
     {
-        StartCoroutine(BlinkCoroutine(blinkPositionArriba, blinkRotationArriba));
+        StartCoroutine(BlinkCoroutine(blinkPositionArriba));
     }
 
-    private System.Collections.IEnumerator BlinkCoroutine(Vector3 targetPosition, Vector3 targetRotation)
+    private System.Collections.IEnumerator BlinkCoroutine(Vector3 targetPosition)
     {
         gameObject.transform.position = targetPosition;
-        gameObject.transform.rotation = Quaternion.Euler(targetRotation);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
         //haz que el sprite haga un blur 
         gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0); // Optional: make it semi-transparent
