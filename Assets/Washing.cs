@@ -3,29 +3,36 @@ using UnityEngine;
 public class Washing : MonoBehaviour
 {
     private float elapsed;
-    private bool active, first;
+    private bool active, first, oven;
     public AudioSource audio, centrif, abrir;
     public bool completada;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void iniciaContador()
     {
         elapsed = 0f;
+        oven = true;
+    }
+
+    void Start()
+    {
         first = true;
         active = false;
         completada = false;
+        oven = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        elapsed += Time.deltaTime;
-        if (first && elapsed >= 10f && audio != null)
+        if (oven)
         {
-            audio.Play();
-            first = false;
-            active = true;
-            if (centrif != null) centrif.Stop();
+            elapsed += Time.deltaTime;
+            if (first && elapsed >= 10f && audio != null)
+            {
+                audio.Play();
+                first = false;
+                active = true;
+                if (centrif != null) centrif.Stop();
+            }
         }
     }
 

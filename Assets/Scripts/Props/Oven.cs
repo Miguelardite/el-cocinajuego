@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class Oven : PropGeneric
 {
-    bool cookChicken;
+    bool cookChicken, first;
+    public GameObject lavadora;
     public void Awake()
     {
         isActive = false; // Activo = abierto e inactivo = cerrado
         cookChicken = false;
+        first = true;
     }
     public override void Action()
     {
@@ -25,6 +27,12 @@ public class Oven : PropGeneric
         if (cookChicken && !isActive && chicken.GetComponent<Chicken>().frozenPercent <= 0)
         {
             chicken.GetComponent<Chicken>().cookingPercent += Time.deltaTime;
+            if (first)
+            {
+                first = false;
+                lavadora.GetComponent<Washing>().iniciaContador();
+            }
+
         }
     }
 }
