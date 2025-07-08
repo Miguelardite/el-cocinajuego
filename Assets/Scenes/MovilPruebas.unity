@@ -618,7 +618,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 368886541}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1386658068}
+        m_TargetAssemblyTypeName: ScriptMovil, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &368886541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,6 +1741,9 @@ MonoBehaviour:
   hidePosition: {x: -180, y: -500, z: 0}
   isMovilActive: 0
   canMove: 1
+  menu: {fileID: 1510214596}
+  tistos: {fileID: 9648546}
+  wassap: {fileID: 963718955}
 --- !u!114 &1386658069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,7 +2119,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1546581917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1386658068}
+        m_TargetAssemblyTypeName: ScriptMovil, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1546581917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2795,7 +2822,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1764554584}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1386658068}
+        m_TargetAssemblyTypeName: ScriptMovil, Assembly-CSharp
+        m_MethodName: GoToWsp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1764554584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2916,7 +2955,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2071432052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1386658068}
+        m_TargetAssemblyTypeName: ScriptMovil, Assembly-CSharp
+        m_MethodName: GoToTistos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2071432052
 MonoBehaviour:
   m_ObjectHideFlags: 0

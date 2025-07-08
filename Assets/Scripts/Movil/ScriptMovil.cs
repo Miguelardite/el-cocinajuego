@@ -9,6 +9,9 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
     public bool isMovilActive = false;
     public bool canMove = true;
     private InputSystem_Actions inputActions;
+    public GameObject menu;
+    public GameObject tistos;
+    public GameObject wassap;
 
     private void Awake()
     {
@@ -16,6 +19,7 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
         inputActions.UI.SetCallbacks(this);
         // Set the initial position of the phone
         phone.transform.localPosition = hidePosition;
+        GoToMenu();
     }
     private void OnEnable()
     {
@@ -24,6 +28,25 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
     private void OnDisable()
     {
         inputActions.Disable();
+    }
+
+    public void GoToWsp()
+    {
+        menu.SetActive(false);
+        tistos.SetActive(false);
+        wassap.SetActive(true);
+    }
+    public void GoToTistos()
+    {
+        menu.SetActive(false);
+        tistos.SetActive(true);
+        wassap.SetActive(false);
+    }
+    public void GoToMenu()
+    {
+        menu.SetActive(true);
+        tistos.SetActive(false);
+        wassap.SetActive(false);
     }
     public void OnToggleMovil(InputAction.CallbackContext context)
     {
@@ -37,6 +60,7 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
             }
             else
             {
+                GoToMenu();
                 StartCoroutine(PhoneCoroutine(true));
             }
         }
@@ -88,6 +112,7 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
                 time = 2f;
                 isMovilActive =false;
                 canMove = true;
+                GoToMenu();
             }
             else
             {
