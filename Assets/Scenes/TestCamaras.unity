@@ -911,16 +911,6 @@ MonoBehaviour:
   cameras: []
   currentCameraIndex: 0
   blinkScript: {fileID: 1249235059}
-  imagesFrontal:
-  - {fileID: 793773801}
-  imagesDerecha:
-  - {fileID: 1295885286}
-  imagesTrasera:
-  - {fileID: 191370203}
-  imagesIzquierda:
-  - {fileID: 375256128}
-  imagesArriba:
-  - {fileID: 1964650711}
 --- !u!114 &482652035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1674,14 +1664,8 @@ MonoBehaviour:
   blinkPositionIzquierda: {x: -40, y: 0, z: -2}
   blinkPositionTrasera: {x: 80, y: 0, z: -2}
   blinkPositionFrontal: {x: 0, y: 0, z: -2}
-  blinkRotationArriba: {x: 0, y: 0, z: 0}
-  blinkRotationDerecha: {x: 0, y: 0, z: 0}
-  blinkRotationIzquierda: {x: 0, y: 0, z: 0}
-  blinkRotationTrasera: {x: 0, y: 0, z: 0}
-  blinkRotationFrontal: {x: 0, y: 0, z: 0}
   blinkDuration: 0.125
   blinkPositions: []
-  blinkRotations: []
 --- !u!212 &1249235060
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2003,8 +1987,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 76e8658e8a9d9bf4b842adb1de1589fc, type: 3}
-  m_Resource: {fileID: 8300000, guid: 76e8658e8a9d9bf4b842adb1de1589fc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ebd0d1b617d9ee4e902007c1ced3e42, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4ebd0d1b617d9ee4e902007c1ced3e42, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
