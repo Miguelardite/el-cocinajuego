@@ -13,7 +13,7 @@ public class Washing : MonoBehaviour
         oven = true;
     }
 
-    void Start()
+    void Awake()
     {
         first = true;
         active = false;

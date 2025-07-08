@@ -7,6 +7,8 @@ public class SeasoningBox : MonoBehaviour
     public GameObject worktop;
     public GameObject condimentPrefab;
     public GameObject condiment;
+
+    public Sprite openBag;
     bool followMouse;
 
     void Update()
@@ -17,7 +19,16 @@ public class SeasoningBox : MonoBehaviour
         {
             if (followMouse)
             {
-                DropCondiment();
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(condiment.transform.position, 0.5f);
+
+                foreach (Collider2D collider in colliders)
+                {
+                    Debug.Log("Collider: " + collider.name);
+                    if (collider.CompareTag("CanDropCondimentHere"))
+                    {
+                        DropCondiment();
+                    }
+                }
             }
             else
             {
@@ -58,8 +69,8 @@ public class SeasoningBox : MonoBehaviour
             if (Vector2.Distance(condiment.transform.position, chicken.transform.position) < 3f && chicken.GetComponent<Chicken>().frozenPercent <=0)
             {
                 Debug.Log("Condiento usado");
-                condiment.GetComponent<SpriteRenderer>().color = Color.black;
                 chicken.GetComponent<Chicken>().seasoning += 5;
+                condiment.GetComponent<SpriteRenderer>().sprite = openBag;
             }
             else if (Vector2.Distance(condiment.transform.position, chicken.transform.position) < 3f && chicken.GetComponent<Chicken>().frozenPercent > 0)
             {

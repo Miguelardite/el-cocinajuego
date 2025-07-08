@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CanDropChickenHere
   - BG
+  - CanDropCondimentHere
   layers:
   - Default
   - TransparentFX

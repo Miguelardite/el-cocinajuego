@@ -21,14 +21,19 @@ public class Chicken : MonoBehaviour
             SetCursor();
             if (Vector2.Distance(transform.position, HoldManager.Instance.mouseWorldPos) < 3f)
             {
-                if (!followMouse)
+                if (!followMouse && HoldManager.Instance.heldObject == null)
                 {
-                    transform.SetParent(null);
+                    // Si no se está siguiendo el ratón y no hay objeto sostenido, se agarra el pollo
                     HoldManager.Instance.heldObject = gameObject;
                     followMouse = true;
                     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     mousePos.z = 0f;
                     transform.position = mousePos;
+                }
+                else if (HoldManager.Instance.heldObject != null && HoldManager.Instance.heldObject != gameObject)
+                {
+                    // Si ya hay un objeto sostenido, no se puede agarrar otro
+                    Debug.Log("Ya tienes un objeto en las manos.");
                 }
                 else
                 {
