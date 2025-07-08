@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
 {
@@ -12,6 +13,8 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
     public GameObject menu;
     public GameObject tistos;
     public GameObject wassap;
+    public GameObject postIt;
+    private List<string> textos = new ();
 
     private void Awake()
     {
@@ -20,6 +23,9 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
         // Set the initial position of the phone
         phone.transform.localPosition = hidePosition;
         GoToMenu();
+        textos.Add("-Cocina el pollo");
+        textos.Add("-Saca la basura");
+        textos.Add("-Recoge la lavadora");
     }
     private void OnEnable()
     {
@@ -35,6 +41,10 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
         menu.SetActive(false);
         tistos.SetActive(false);
         wassap.SetActive(true);
+        for(int i = Mathf.Max(0, textos.Count - 3); i < textos.Count; ++i)
+        {
+            postIt.GetComponent<toDoList>().iniciaTarea(textos[i]);
+        }
     }
     public void GoToTistos()
     {
@@ -73,9 +83,6 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
             Debug.Log("Moving phone up");
             while (phone.transform.localPosition != showPosition)
             {
-                /*phone.transform.localPosition = Vector3.MoveTowards(phone.transform.localPosition, showPosition, 150f);
-                yield return new WaitForSeconds(2);
-                isMovilActive = true;*/
                 StartCoroutine(MoveCoroutine(1, 0.1f));
                 yield return null;
             }
@@ -85,9 +92,6 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
             Debug.Log("Moving phone down");
             while (phone.transform.localPosition != hidePosition)
             {
-                /*phone.transform.localPosition = Vector3.MoveTowards(phone.transform.localPosition, hidePosition, 150f);
-                yield return new WaitForSeconds(2);
-                isMovilActive = false;*/
                 StartCoroutine(MoveCoroutine(-1, 0.1f));
                 yield return null;
             }
@@ -110,7 +114,7 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
             {
                 phone.transform.localPosition = new Vector3(-180, -500, 0);
                 time = 2f;
-                isMovilActive =false;
+                isMovilActive = false;
                 canMove = true;
                 GoToMenu();
             }
