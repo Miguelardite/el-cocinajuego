@@ -4,6 +4,7 @@ public class Defroster : PropGeneric
 {
     bool defrostChicken;
     public AudioSource heat, beep;
+    bool beepPlayed;
     public void Awake()
     {
         isActive = false; // Activo = abierto e inactivo = cerrado
@@ -41,9 +42,10 @@ public class Defroster : PropGeneric
             {
                 heat.Stop();
             }
-            if (!beep.isPlaying)
+            if (!beep.isPlaying && !beepPlayed)
             {
                 beep.Play();
+                beepPlayed = true;
             }
         }
         else if (!isActive && chicken.transform.parent != transform)

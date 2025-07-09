@@ -66,7 +66,7 @@ public class SeasoningBox : MonoBehaviour
         if (chicken.transform.parent == worktop.transform)
         {
             // Verifica si el condimento está cerca del pollo
-            if (Vector2.Distance(condiment.transform.position, chicken.transform.position) < 3f && chicken.GetComponent<Chicken>().frozenPercent <=0)
+            if (Vector2.Distance(condiment.transform.position, chicken.transform.position) < 3f && chicken.GetComponent<Chicken>().frozenPercent <=0 && chicken.GetComponent<Chicken>().cookingPercent < 50)
             {
                 Debug.Log("Condiento usado");
                 chicken.GetComponent<Chicken>().seasoning += 5;
@@ -75,6 +75,10 @@ public class SeasoningBox : MonoBehaviour
             else if (Vector2.Distance(condiment.transform.position, chicken.transform.position) < 3f && chicken.GetComponent<Chicken>().frozenPercent > 0)
             {
                 Debug.Log("Condimento no puede ser usado en pollo congelado");
+            }
+            else if (chicken.GetComponent<Chicken>().cookingPercent >= 50)
+            {
+                Debug.Log("Condimento no puede ser usado en pollo cocido");
             }
             else
             {

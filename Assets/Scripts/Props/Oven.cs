@@ -34,10 +34,6 @@ public class Oven : PropGeneric
                 first = false;
                 lavadora.GetComponent<Washing>().iniciaContador();
             }
-        }
-
-        if (cookChicken && !isActive)
-        {
             if (!cook.isPlaying)
             {
                 cook.Play();
