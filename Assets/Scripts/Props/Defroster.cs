@@ -3,6 +3,7 @@ using UnityEngine;
 public class Defroster : PropGeneric
 {
     bool defrostChicken;
+    public AudioSource heat, beep;
     public void Awake()
     {
         isActive = false; // Activo = abierto e inactivo = cerrado
@@ -25,5 +26,45 @@ public class Defroster : PropGeneric
         {
             chicken.GetComponent<Chicken>().frozenPercent -= Time.deltaTime;
         }
-    }   
+        //si está cerrado con el pollo dentro, se reproduce el sonido de calor
+
+        if (!isActive && chicken.transform.parent == transform && chicken.GetComponent<Chicken>().frozenPercent > 0)
+        {
+            if (!heat.isPlaying)
+            {
+                heat.Play();
+            }
+        }
+        else if (!isActive && chicken.transform.parent == transform && chicken.GetComponent<Chicken>().frozenPercent <= 0)
+        {
+            if (heat.isPlaying)
+            {
+                heat.Stop();
+            }
+            if (!beep.isPlaying)
+            {
+                beep.Play();
+            }
+        }
+        else if (!isActive && chicken.transform.parent != transform)
+        {
+            if (beep.isPlaying)
+            {
+                beep.Stop();
+            }
+        }
+        else
+        {
+            if (heat.isPlaying)
+            {
+                heat.Stop();
+            }
+            if (beep.isPlaying)
+            {
+                beep.Stop();
+            }
+        }
+
+        //isActive controla si el defrost está abierto o cerrado. true = abierto, false = cerrado
+    }
 }

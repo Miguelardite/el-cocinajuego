@@ -6,7 +6,8 @@ public abstract class PropGeneric : MonoBehaviour
     public string propMisionName;
     public string tagChicken = "CanDropChickenHere";
     public GameObject chicken;
-
+    public Sprite[] sprites;
+    public AudioSource door;
     public void OnMouseDown()
     {
         if (HoldManager.Instance.heldObject == null)
@@ -16,7 +17,8 @@ public abstract class PropGeneric : MonoBehaviour
             if (isActive)
             {
                 Debug.Log("Abierto");
-                GetComponent<SpriteRenderer>().enabled = false;
+                door.Play();
+                GetComponent<SpriteRenderer>().sprite = sprites[1];
                 gameObject.tag = tagChicken;
                 if (chicken.transform.parent == transform)
                 {
@@ -26,7 +28,8 @@ public abstract class PropGeneric : MonoBehaviour
             else
             {
                 Debug.Log("Cerrado");
-                GetComponent<SpriteRenderer>().enabled = true;
+                door.Play();
+                GetComponent<SpriteRenderer>().sprite = sprites[0];
                 gameObject.tag = "Untagged";
                 if (chicken.transform.parent == transform)
                 {
