@@ -1302,7 +1302,7 @@ MonoBehaviour:
   chicken: {fileID: 1946164176}
   sprites:
   - {fileID: 1331631624984231558, guid: c276e8f9855b4b6478e77c78aee3afa7, type: 3}
-  - {fileID: -7392042942192002534, guid: 0b8f58e939e768345a064236bb5d8981, type: 3}
+  - {fileID: 21300000, guid: 0b8f58e939e768345a064236bb5d8981, type: 3}
 --- !u!212 &857924518
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1760,7 +1760,7 @@ Transform:
   m_GameObject: {fileID: 1200113771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.22, y: -1.07, z: 0}
+  m_LocalPosition: {x: 2.22, y: -1.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3594,8 +3594,8 @@ MonoBehaviour:
   tagChicken: CanDropChickenHere
   chicken: {fileID: 1946164176}
   sprites:
-  - {fileID: 2946008799085054025, guid: 91d4397b8cc6abd42a8928c9e7288964, type: 3}
-  - {fileID: 1954418726997362172, guid: 735c8b3130c8e4542b6305469d78b22d, type: 3}
+  - {fileID: 21300000, guid: 91d4397b8cc6abd42a8928c9e7288964, type: 3}
+  - {fileID: 21300000, guid: 735c8b3130c8e4542b6305469d78b22d, type: 3}
   lavadora: {fileID: 1705306064}
 --- !u!61 &1947513357
 BoxCollider2D:
@@ -3631,17 +3631,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.011581421, y: 0}
+  m_Offset: {x: -0.0049142838, y: 0.028970242}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.34, y: 4.21}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 6, y: 4.73}
+    newSize: {x: 6, y: 4.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.3, y: 4.2}
+  m_Size: {x: 5.352558, y: 4.1420593}
   m_EdgeRadius: 0
 --- !u!212 &1947513358
 SpriteRenderer:
@@ -3687,12 +3687,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 2946008799085054025, guid: 91d4397b8cc6abd42a8928c9e7288964, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91d4397b8cc6abd42a8928c9e7288964, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6, y: 4.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3707,8 +3707,8 @@ Transform:
   m_GameObject: {fileID: 1947513355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.231, y: -6.194, z: 0}
-  m_LocalScale: {x: 1.9, y: 1.9, z: 1}
+  m_LocalPosition: {x: 10.2294, y: -6.2189, z: 0}
+  m_LocalScale: {x: 1.8845984, y: 1.8845984, z: 0.99189395}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
