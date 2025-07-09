@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using TMPro;
 
 public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
 {
@@ -14,7 +15,11 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
     public GameObject tistos;
     public GameObject wassap;
     public GameObject postIt;
+    public TextMeshProUGUI hora;
+    private float elapsed;
+    public bool basura;
     private List<string> textos = new ();
+    private string[] horas = { "18:30", "18:31", "18:32", "18:33", "18:34", "18:35", "18:36", "18:37", "18:38", "18:39", "18:40", "18:41", "18:42", "18:43", "18:44" };
 
     private void Awake()
     {
@@ -24,8 +29,10 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
         phone.transform.localPosition = hidePosition;
         GoToMenu();
         textos.Add("-Cocina el pollo");
-        textos.Add("-Saca la basura");
+        textos.Add("-Deja apagado el ventilador");
         textos.Add("-Recoge la lavadora");
+        elapsed = 0f;
+        basura = false;
     }
     private void OnEnable()
     {
@@ -130,6 +137,20 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
             StopCoroutine(MoveCoroutine(direction, time));
             yield return null;
         }
+    }
+
+    void Update()
+    {
+        elapsed += Time.deltaTime;
+
+        int aux = (int) elapsed / 20;
+        hora.text = horas[aux];
+        if (elapsed >= 90f && !basura)
+        {
+            textos.Add("-Saca la basura");
+            basura = true;
+        }
+        //Mas tareas con el tiempo?
     }
 
 }

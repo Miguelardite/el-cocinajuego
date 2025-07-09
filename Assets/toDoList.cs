@@ -20,9 +20,9 @@ public class toDoList : MonoBehaviour
 
     void Awake()
     {
-        available1 = false;
-        available2 = false;
-        available3 = false;
+        available1 = true;
+        available2 = true;
+        available3 = true;
         textos[0] = tmpText1.text;
         textos[1] = tmpText2.text;
         textos[2] = tmpText3.text;
@@ -55,7 +55,10 @@ public class toDoList : MonoBehaviour
 
     public void iniciaTarea(string text)
     {
-        if (text != textos[0] && text != textos[1] && text != textos[2])
+        if (text == textos[0]) inicia(1, text);
+        else if (text == textos[1]) inicia(2, text);
+        else if (text == textos[2]) inicia(3, text);
+        else
         {
             if (available1) inicia(1, text);        //toda esta parrafada es para ver donde poner la tarea nueva
             else if (available2) inicia(2, text);   //si hay un espacio libre la pone ahi, si no, sustituye la tarea mas antigua
