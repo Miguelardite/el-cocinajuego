@@ -1240,7 +1240,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3591221262802366293, guid: efce8a01f085fbb46ab0f4859039e46f, type: 3}
+  m_Sprite: {fileID: -5698258561632133570, guid: fb12e1732b74b0f4881fb954c64cc1dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1300,6 +1300,9 @@ MonoBehaviour:
   propMisionName: Descongela el pollo
   tagChicken: CanDropChickenHere
   chicken: {fileID: 1946164176}
+  sprites:
+  - {fileID: 1331631624984231558, guid: c276e8f9855b4b6478e77c78aee3afa7, type: 3}
+  - {fileID: -7392042942192002534, guid: 0b8f58e939e768345a064236bb5d8981, type: 3}
 --- !u!212 &857924518
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1344,7 +1347,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: d7a8f31c1574a0146b8d51bd241ea334, type: 3}
+  m_Sprite: {fileID: 1331631624984231558, guid: c276e8f9855b4b6478e77c78aee3afa7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1365,7 +1368,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.3, y: -1.1591, z: 0}
-  m_LocalScale: {x: 5.039642, y: 2.8209543, z: 2.9819}
+  m_LocalScale: {x: 2, y: 2, z: 2.9819}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1404,17 +1407,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.058088064, y: 0.045640707}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.13, y: 1.65}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.1907535, y: 1.6887596}
   m_EdgeRadius: 0
 --- !u!1 &914442029
 GameObject:
@@ -1685,13 +1688,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 5, y: 2.5}
+    newSize: {x: 5, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
 --- !u!212 &1200113773
 SpriteRenderer:
@@ -1700,7 +1703,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200113771}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1737,12 +1740,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 281a28598a2717e40a30f60dc55fa1cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1757,8 +1760,8 @@ Transform:
   m_GameObject: {fileID: 1200113771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6436, y: -2.14, z: 0}
-  m_LocalScale: {x: 7.0334187, y: 2.6149, z: 1}
+  m_LocalPosition: {x: 2.22, y: -1.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2038,6 +2041,9 @@ MonoBehaviour:
   propMisionName: Descongela el pollo
   tagChicken: CanDropChickenHere
   chicken: {fileID: 1946164176}
+  sprites:
+  - {fileID: 7482667652216324306, guid: d7a8f31c1574a0146b8d51bd241ea334, type: 3}
+  - {fileID: 7482667652216324306, guid: d7a8f31c1574a0146b8d51bd241ea334, type: 3}
   openTime: 0
   pitido: {fileID: 1369497443}
 --- !u!212 &1369497441
@@ -3587,6 +3593,9 @@ MonoBehaviour:
   propMisionName: Cocina el pollo
   tagChicken: CanDropChickenHere
   chicken: {fileID: 1946164176}
+  sprites:
+  - {fileID: 2946008799085054025, guid: 91d4397b8cc6abd42a8928c9e7288964, type: 3}
+  - {fileID: 1954418726997362172, guid: 735c8b3130c8e4542b6305469d78b22d, type: 3}
   lavadora: {fileID: 1705306064}
 --- !u!61 &1947513357
 BoxCollider2D:
@@ -3622,17 +3631,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.011581421, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.34, y: 4.21}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.3, y: 4.2}
   m_EdgeRadius: 0
 --- !u!212 &1947513358
 SpriteRenderer:
@@ -3678,7 +3687,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 2946008799085054025, guid: 91d4397b8cc6abd42a8928c9e7288964, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3698,8 +3707,8 @@ Transform:
   m_GameObject: {fileID: 1947513355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.0137, y: -6.9706, z: 0}
-  m_LocalScale: {x: 9.192875, y: 5.523116, z: 1}
+  m_LocalPosition: {x: 10.231, y: -6.194, z: 0}
+  m_LocalScale: {x: 1.9, y: 1.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

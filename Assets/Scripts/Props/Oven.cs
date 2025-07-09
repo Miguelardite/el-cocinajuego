@@ -32,7 +32,6 @@ public class Oven : PropGeneric
                 first = false;
                 lavadora.GetComponent<Washing>().iniciaContador();
             }
-
         }
     }
 }
