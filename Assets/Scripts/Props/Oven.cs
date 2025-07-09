@@ -5,6 +5,7 @@ public class Oven : PropGeneric
 {
     bool cookChicken, first;
     public GameObject lavadora;
+    public AudioSource cook;
     public void Awake()
     {
         isActive = false; // Activo = abierto e inactivo = cerrado
@@ -27,10 +28,26 @@ public class Oven : PropGeneric
         if (cookChicken && !isActive && chicken.GetComponent<Chicken>().frozenPercent <= 0)
         {
             chicken.GetComponent<Chicken>().cookingPercent += Time.deltaTime;
+
             if (first)
             {
                 first = false;
                 lavadora.GetComponent<Washing>().iniciaContador();
+            }
+        }
+
+        if (cookChicken && !isActive)
+        {
+            if (!cook.isPlaying)
+            {
+                cook.Play();
+            }
+        }
+        else
+        {
+            if (cook.isPlaying)
+            {
+                cook.Stop();
             }
         }
     }
