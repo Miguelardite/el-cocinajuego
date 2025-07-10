@@ -60,7 +60,7 @@ public class Fan : MonoBehaviour
     }
     void ItsHot()
     {
-        if (postIt != null)
+        if (postIt != null && !isOn)
         {
             postIt.GetComponent<toDoList>().iniciaTarea("Hace calor");
         }
