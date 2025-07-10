@@ -3034,7 +3034,7 @@ MonoBehaviour:
   menu: {fileID: 804588538}
   tistos: {fileID: 2016885214}
   wassap: {fileID: 510827189}
-  postIt: {fileID: 0}
+  postIt: {fileID: 1855394861}
   hora: {fileID: 661089259}
   basura: 0
 --- !u!114 &833534855
