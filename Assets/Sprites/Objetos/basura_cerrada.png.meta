@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 950c6aa4b95dda145bd22e6afd931926
+guid: 43dca952d1411234489a4fdd0e6ef6aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5251744956290624300
-    second: x_0
+      213: -7377882297621140650
+    second: basura_cerrada_0
+  - first:
+      213: -5673668238685402629
+    second: basura_cerrada_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: x_0
+      name: basura_cerrada_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 9
-        width: 87
-        height: 86
+        x: 0
+        y: 0
+        width: 275
+        height: 309
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2be6aa7632f1e840800000000000000
-      internalID: 5251744956290624300
+      spriteID: 65b26a7d32f7c9990800000000000000
+      internalID: -7377882297621140650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basura_cerrada_1
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 200
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf98dbb1cc41341b0800000000000000
+      internalID: -5673668238685402629
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      x_0: 5251744956290624300
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,11 +1,22 @@
 using NUnit.Framework;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MomChecklist : MonoBehaviour
 {
+    public GameObject pollo;
+    public GameObject ventilador;
+    public GameObject lavadora;
+    public GameObject basura;
+    public GameObject nevera;
+    public GameObject horno;
+    public GameObject microondas;
+    public GameObject ventana;
+
     public int ChickenCooked = 0;
     public int ChickenSeasoned = 0;
     public bool FanOn = true;
@@ -16,6 +27,7 @@ public class MomChecklist : MonoBehaviour
     public bool MicrowaveClosed = true;
     public bool WindowClosed = true;
     public int errors = 0;
+    public Collider2D[] colliders;
     public List<string> MomText;
     public GameObject DialoguePanel;
     public TMP_Text DialogueText;
@@ -27,12 +39,49 @@ public class MomChecklist : MonoBehaviour
         //mira si presiona el espacio y si el panel de dialogo esta activo
         if (Input.GetKeyDown(KeyCode.Return) && !didDialogueStart)
         {
+            CameraMovement.instance.canMove = false;
+            HoldManager.Instance.canGrab = false;
+
+            foreach (Collider2D collider in colliders)
+            {
+                collider.enabled = false;
+            }
+            CameraMovement.instance.SwitchCamera(CameraMovement.instance.cameras[3]);
+            CameraMovement.instance.blinkScript.Blink(3);
             StartDialogue();
         }
         else if (Input.GetKeyDown(KeyCode.Return) && DialogueText.text == MomText[lineIndex])
         {
             NextDialogueLine();
         }
+    }
+
+    public void CheckThings()
+    {
+        if (pollo.GetComponent<Chicken>().frozenPercent > 0)
+        {
+            ChickenCooked = 0; // Chicken is frozen
+        }
+        else if (pollo.GetComponent<Chicken>().cookingPercent < 50)
+        {
+            ChickenCooked = 1; // Chicken is raw
+        }
+        else if (pollo.GetComponent<Chicken>().cookingPercent >= 50 && pollo.GetComponent<Chicken>().cookingPercent < 70)
+        {
+            ChickenCooked = 2; // Chicken is cooked but not burnt
+        }
+        else if (pollo.GetComponent<Chicken>().cookingPercent >= 70)
+        {
+            ChickenCooked = 3; // Chicken is burnt
+        }
+        ChickenSeasoned = Convert.ToInt32(pollo.GetComponent<Chicken>().seasoning);
+        FanOn = ventilador.GetComponent<PropGeneric>().isActive;
+        WashingMachineOn = lavadora.GetComponent<PropGeneric>().isActive;
+        TrashTakenOut = basura.GetComponent<PropGeneric>().isActive;
+        FridgeClosed = nevera.GetComponent<PropGeneric>().isActive;
+        FurnaceClosed = horno.GetComponent<PropGeneric>().isActive;
+        MicrowaveClosed = microondas.GetComponent<PropGeneric>().isActive;
+        WindowClosed = ventana.GetComponent<PropGeneric>().isActive;
     }
     public void StartDialogue()
     {
@@ -80,6 +129,7 @@ public class MomChecklist : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        colliders = FindObjectsOfType<Collider2D>();
     }
 
     public void SendText()
