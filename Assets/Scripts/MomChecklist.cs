@@ -14,6 +14,7 @@ public class MomChecklist : MonoBehaviour
     public bool FridgeClosed = true;
     public bool FurnaceClosed = true;
     public bool MicrowaveClosed = true;
+    public bool WindowClosed = true;
     public int errors = 0;
     public List<string> MomText;
     public GameObject DialoguePanel;
@@ -24,11 +25,11 @@ public class MomChecklist : MonoBehaviour
     public void Update()
     {
         //mira si presiona el espacio y si el panel de dialogo esta activo
-        if (Input.GetKeyDown(KeyCode.Space) && !didDialogueStart)
+        if (Input.GetKeyDown(KeyCode.Return) && !didDialogueStart)
         {
             StartDialogue();
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && DialogueText.text == MomText[lineIndex])
+        else if (Input.GetKeyDown(KeyCode.Return) && DialogueText.text == MomText[lineIndex])
         {
             NextDialogueLine();
         }
@@ -156,6 +157,18 @@ public class MomChecklist : MonoBehaviour
             else
             {
                 MomText.Add("And you didn't take out the trash, I can smell it from here!\n");
+            }
+            errors++;
+        }
+        if (WindowClosed)
+        {
+            if (errors == 0)
+            {
+                MomText.Add("But the window is still closed, the entire house will smell like chicken.\n");
+            }
+            else
+            {
+                MomText.Add("Didn't I tell you to open the window? Now the entire house will smell like chicken.\n");
             }
             errors++;
         }
