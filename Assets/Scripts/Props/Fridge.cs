@@ -10,7 +10,7 @@ public class Fridge : PropGeneric
     public AudioSource pitido;
     public void Awake()
     {
-        isActive = false; // Activo = abierto e inactivo = cerrado
+        isOn = false; // Activo = abierto e inactivo = cerrado
         freezeChicken = true;
         playing = false;
         openTime = 0f;
@@ -28,7 +28,7 @@ public class Fridge : PropGeneric
     }
     private void Update()
     {
-        if (isActive)
+        if (isOn)
         {
             if (!lastActive) openTime = 0f;
             openTime += Time.deltaTime;
@@ -43,9 +43,9 @@ public class Fridge : PropGeneric
             playing = false;
             pitido.Stop();
         }
-        lastActive = isActive;
+        lastActive = isOn;
 
-        if (freezeChicken && !isActive && chicken.GetComponent<Chicken>().frozenPercent < 50)
+        if (freezeChicken && !isOn && chicken.GetComponent<Chicken>().frozenPercent < 50)
         {
             chicken.GetComponent<Chicken>().frozenPercent += Time.deltaTime;
         }

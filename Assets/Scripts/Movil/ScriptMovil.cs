@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using TMPro;
 
-public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
+public class ScriptMovil : MonoBehaviour
 {
     public GameObject phone;
     public Vector3 showPosition;
@@ -16,15 +16,17 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
     public GameObject wassap;
     public GameObject postIt;
     public TextMeshProUGUI hora;
+    public Collider2D[] colliders;
+    [SerializeField]
     private float elapsed;
     public bool basura;
+    public bool finish = false;
     private List<string> textos = new ();
     private string[] horas = { "18:30", "18:31", "18:32", "18:33", "18:34", "18:35", "18:36", "18:37", "18:38", "18:39", "18:40", "18:41", "18:42", "18:43", "18:44" };
 
     private void Awake()
     {
-        inputActions = new InputSystem_Actions();
-        inputActions.UI.SetCallbacks(this);
+        colliders = FindObjectsOfType<Collider2D>();
         // Set the initial position of the phone
         phone.transform.localPosition = hidePosition;
         GoToMenu();
@@ -33,14 +35,6 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
         textos.Add("-Recoge la lavadora");
         elapsed = 0f;
         basura = false;
-    }
-    private void OnEnable()
-    {
-        inputActions.Enable();
-    }
-    private void OnDisable()
-    {
-        inputActions.Disable();
     }
 
     public void GoToWsp()
@@ -55,28 +49,43 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
     }
     public void GoToTistos()
     {
+        Time.timeScale = 2f;
         menu.SetActive(false);
         tistos.SetActive(true);
         wassap.SetActive(false);
     }
     public void GoToMenu()
     {
+        Time.timeScale = 1f;
         menu.SetActive(true);
         tistos.SetActive(false);
         wassap.SetActive(false);
     }
-    public void OnToggleMovil(InputAction.CallbackContext context)
+    public void OnToggleMovil()
     {
-        if (context.performed && canMove)
+        if (canMove && elapsed <299f)
         {
             canMove = false;
             Debug.Log("Toggle Movil Input Action Triggered");
             if (isMovilActive)
             {
                 StartCoroutine(PhoneCoroutine(false));
+                CameraMovement.instance.canMove = true;
+                HoldManager.Instance.canGrab = true;
+                foreach (Collider2D collider in colliders)
+                {
+                    collider.enabled = true;
+                }
             }
             else
             {
+                CameraMovement.instance.canMove = false;
+                HoldManager.Instance.canGrab = false;
+
+                foreach (Collider2D collider in colliders)
+                {
+                    collider.enabled = false;
+                }
                 GoToMenu();
                 StartCoroutine(PhoneCoroutine(true));
             }
@@ -141,16 +150,35 @@ public class ScriptMovil : MonoBehaviour, InputSystem_Actions.IUIActions
 
     void Update()
     {
-        elapsed += Time.deltaTime;
-
-        int aux = (int) elapsed / 20;
-        hora.text = horas[aux];
-        if (elapsed >= 90f && !basura)
+        if (!finish)
         {
-            textos.Add("-Saca la basura");
-            basura = true;
+            elapsed += Time.deltaTime;
+            
+            int aux = (int)elapsed / 20;
+            hora.text = horas[aux];
+            if (elapsed >= 90f && !basura)
+            {
+                textos.Add("-Saca la basura");
+                basura = true;
+            }
+            //Mas tareas con el tiempo? 
         }
-        //Mas tareas con el tiempo?
+        if (elapsed >= 299f && !finish)
+        {
+            if (isMovilActive)
+            {
+                StartCoroutine(PhoneCoroutine(false));
+                CameraMovement.instance.canMove = true;
+                HoldManager.Instance.canGrab = true;
+                foreach (Collider2D collider in colliders)
+                {
+                    collider.enabled = true;
+                }
+            }
+            finish = true;
+            Debug.Log("Finishing the game, calling MomChecklist.Instance.CheckThings() now.");
+            MomChecklist.Instance.StartMom();
+        }
     }
 
 }

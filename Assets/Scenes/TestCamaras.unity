@@ -919,7 +919,6 @@ GameObject:
   m_Component:
   - component: {fileID: 165092409}
   - component: {fileID: 165092408}
-  - component: {fileID: 165092407}
   - component: {fileID: 165092406}
   m_Layer: 0
   m_Name: GatoCamara
@@ -972,14 +971,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &165092407
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165092405}
-  m_Enabled: 1
 --- !u!20 &165092408
 Camera:
   m_ObjectHideFlags: 0
@@ -1596,6 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashQuantity: 0
+  isOpen: 0
   sprites:
   - {fileID: 21300000, guid: 43dca952d1411234489a4fdd0e6ef6aa, type: 3}
   - {fileID: 21300000, guid: 39a4360dc6cc4684385a4ec0a15dadf2, type: 3}
@@ -1879,6 +1871,7 @@ MonoBehaviour:
   cameras: []
   currentCameraIndex: 0
   blinkScript: {fileID: 1249235059}
+  scriptMovil: {fileID: 833534854}
   canMove: 1
 --- !u!114 &482652035
 MonoBehaviour:
@@ -1970,9 +1963,21 @@ MonoBehaviour:
     m_ActionId: 5c161130-967a-4403-891e-088c78092ad4
     m_ActionName: 'Cameras/GirarIzquierda[/Keyboard/a]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 33b7a2ff-39ef-41eb-94a3-3a7a3ef1b8df
-    m_ActionName: 'UI/ToggleMovil[/Keyboard/f]'
+      m_Calls:
+      - m_Target: {fileID: 482652034}
+        m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
+        m_MethodName: OnToggleMovil
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1c382f5-f1ed-4976-97bf-f1b0cf7d8878
+    m_ActionName: 'Cameras/ToggleMovil[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Cameras
@@ -2305,6 +2310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf3f67d18be4de488407e98f9dd45e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
 --- !u!61 &568748552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3036,7 +3042,10 @@ MonoBehaviour:
   wassap: {fileID: 510827189}
   postIt: {fileID: 1855394861}
   hora: {fileID: 661089259}
+  colliders: []
+  elapsed: 0
   basura: 0
+  finish: 0
 --- !u!114 &833534855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5760,6 +5769,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab2c6f438fb75046bebaf642bbd9d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  first: 0
+  oven: 0
   audio: {fileID: 1705306067}
   centrif: {fileID: 1705306066}
   abrir: {fileID: 1705306065}
@@ -6086,6 +6098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca35efd40a6f664bba983bab88f4f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOn: 0
   propMisionName: 
   postIt: {fileID: 1855394861}
   audioSource: {fileID: 1730232564}

@@ -3,7 +3,7 @@ using UnityEngine;
 public class TrashCan : MonoBehaviour
 {
     public int trashQuantity;
-    bool isOpen = false;
+    public bool isOpen = false;
     public Sprite[] sprites;
     public GameObject condimentPrefab;
     void Awake()

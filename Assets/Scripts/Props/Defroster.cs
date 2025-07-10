@@ -7,7 +7,7 @@ public class Defroster : PropGeneric
     bool beepPlayed;
     public void Awake()
     {
-        isActive = false; // Activo = abierto e inactivo = cerrado
+        isOn = false; // Activo = abierto e inactivo = cerrado
         defrostChicken = false;
     }
     public override void Action()
@@ -23,20 +23,20 @@ public class Defroster : PropGeneric
     }
     private void Update()
     {
-        if (defrostChicken && !isActive && chicken.GetComponent<Chicken>().frozenPercent > 0)
+        if (defrostChicken && !isOn && chicken.GetComponent<Chicken>().frozenPercent > 0)
         {
             chicken.GetComponent<Chicken>().frozenPercent -= Time.deltaTime;
         }
         //si está cerrado con el pollo dentro, se reproduce el sonido de calor
 
-        if (!isActive && chicken.transform.parent == transform && chicken.GetComponent<Chicken>().frozenPercent > 0)
+        if (!isOn && chicken.transform.parent == transform && chicken.GetComponent<Chicken>().frozenPercent > 0)
         {
             if (!heat.isPlaying)
             {
                 heat.Play();
             }
         }
-        else if (!isActive && chicken.transform.parent == transform && chicken.GetComponent<Chicken>().frozenPercent <= 0)
+        else if (!isOn && chicken.transform.parent == transform && chicken.GetComponent<Chicken>().frozenPercent <= 0)
         {
             if (heat.isPlaying)
             {
@@ -48,7 +48,7 @@ public class Defroster : PropGeneric
                 beepPlayed = true;
             }
         }
-        else if (!isActive && chicken.transform.parent != transform)
+        else if (!isOn && chicken.transform.parent != transform)
         {
             if (beep.isPlaying)
             {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Fan : MonoBehaviour
 {
-    bool isActive; 
+    public bool isOn; 
     public string propMisionName; 
     public GameObject postIt;
     public AudioSource audioSource;
@@ -13,12 +13,12 @@ public class Fan : MonoBehaviour
     public float timer;
     private void Awake()
     {
-        isActive = true;
+        isOn = true;
         propMisionName = "Apaga el ventilador";
     }
     private void Update()
     {
-        if (isActive)
+        if (isOn)
         {
             timer += Time.deltaTime;
             if (timer >= 0.1f)
@@ -30,7 +30,7 @@ public class Fan : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        isActive = !isActive;
+        isOn = !isOn;
         Action(); 
     }
     
@@ -38,7 +38,7 @@ public class Fan : MonoBehaviour
     {
         //si el ventilador está activo, hará ruido y ejecutará la animación. Si está apagado, cada cierto tiempo
         //saldrán mensajes de que hace calor
-        if (isActive)
+        if (isOn)
         {
             Debug.Log("Encendido");
             if (audioSource != null)

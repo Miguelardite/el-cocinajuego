@@ -37,6 +37,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""ToggleMovil"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1c382f5-f1ed-4976-97bf-f1b0cf7d8878"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""MirarArriba"",
                     ""type"": ""Button"",
                     ""id"": ""bee3a4d2-6d73-4164-ae8d-8e0b38f7459d"",
@@ -78,6 +87,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""989730b8-c626-4a88-b4cb-a6a695ff74e2"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMovil"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""39d0cd94-9426-4ab1-a176-47fd50d2faf4"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
@@ -106,34 +126,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""GirarIzquierda"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""UI"",
-            ""id"": ""272f6d14-89ba-496f-b7ff-215263d3219f"",
-            ""actions"": [
-                {
-                    ""name"": ""ToggleMovil"",
-                    ""type"": ""Button"",
-                    ""id"": ""33b7a2ff-39ef-41eb-94a3-3a7a3ef1b8df"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""62428e77-e4b3-4473-8e12-0044828b7394"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ToggleMovil"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -206,18 +198,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Cameras
         m_Cameras = asset.FindActionMap("Cameras", throwIfNotFound: true);
         m_Cameras_MirarAbajo = m_Cameras.FindAction("MirarAbajo", throwIfNotFound: true);
+        m_Cameras_ToggleMovil = m_Cameras.FindAction("ToggleMovil", throwIfNotFound: true);
         m_Cameras_MirarArriba = m_Cameras.FindAction("MirarArriba", throwIfNotFound: true);
         m_Cameras_GirarDerecha = m_Cameras.FindAction("GirarDerecha", throwIfNotFound: true);
         m_Cameras_GirarIzquierda = m_Cameras.FindAction("GirarIzquierda", throwIfNotFound: true);
-        // UI
-        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_ToggleMovil = m_UI.FindAction("ToggleMovil", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
     {
         UnityEngine.Debug.Assert(!m_Cameras.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Cameras.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystem_Actions.UI.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -280,6 +269,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Cameras;
     private List<ICamerasActions> m_CamerasActionsCallbackInterfaces = new List<ICamerasActions>();
     private readonly InputAction m_Cameras_MirarAbajo;
+    private readonly InputAction m_Cameras_ToggleMovil;
     private readonly InputAction m_Cameras_MirarArriba;
     private readonly InputAction m_Cameras_GirarDerecha;
     private readonly InputAction m_Cameras_GirarIzquierda;
@@ -288,6 +278,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         private @InputSystem_Actions m_Wrapper;
         public CamerasActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @MirarAbajo => m_Wrapper.m_Cameras_MirarAbajo;
+        public InputAction @ToggleMovil => m_Wrapper.m_Cameras_ToggleMovil;
         public InputAction @MirarArriba => m_Wrapper.m_Cameras_MirarArriba;
         public InputAction @GirarDerecha => m_Wrapper.m_Cameras_GirarDerecha;
         public InputAction @GirarIzquierda => m_Wrapper.m_Cameras_GirarIzquierda;
@@ -303,6 +294,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MirarAbajo.started += instance.OnMirarAbajo;
             @MirarAbajo.performed += instance.OnMirarAbajo;
             @MirarAbajo.canceled += instance.OnMirarAbajo;
+            @ToggleMovil.started += instance.OnToggleMovil;
+            @ToggleMovil.performed += instance.OnToggleMovil;
+            @ToggleMovil.canceled += instance.OnToggleMovil;
             @MirarArriba.started += instance.OnMirarArriba;
             @MirarArriba.performed += instance.OnMirarArriba;
             @MirarArriba.canceled += instance.OnMirarArriba;
@@ -319,6 +313,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @MirarAbajo.started -= instance.OnMirarAbajo;
             @MirarAbajo.performed -= instance.OnMirarAbajo;
             @MirarAbajo.canceled -= instance.OnMirarAbajo;
+            @ToggleMovil.started -= instance.OnToggleMovil;
+            @ToggleMovil.performed -= instance.OnToggleMovil;
+            @ToggleMovil.canceled -= instance.OnToggleMovil;
             @MirarArriba.started -= instance.OnMirarArriba;
             @MirarArriba.performed -= instance.OnMirarArriba;
             @MirarArriba.canceled -= instance.OnMirarArriba;
@@ -345,52 +342,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         }
     }
     public CamerasActions @Cameras => new CamerasActions(this);
-
-    // UI
-    private readonly InputActionMap m_UI;
-    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
-    private readonly InputAction m_UI_ToggleMovil;
-    public struct UIActions
-    {
-        private @InputSystem_Actions m_Wrapper;
-        public UIActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ToggleMovil => m_Wrapper.m_UI_ToggleMovil;
-        public InputActionMap Get() { return m_Wrapper.m_UI; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
-        public void AddCallbacks(IUIActions instance)
-        {
-            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
-            @ToggleMovil.started += instance.OnToggleMovil;
-            @ToggleMovil.performed += instance.OnToggleMovil;
-            @ToggleMovil.canceled += instance.OnToggleMovil;
-        }
-
-        private void UnregisterCallbacks(IUIActions instance)
-        {
-            @ToggleMovil.started -= instance.OnToggleMovil;
-            @ToggleMovil.performed -= instance.OnToggleMovil;
-            @ToggleMovil.canceled -= instance.OnToggleMovil;
-        }
-
-        public void RemoveCallbacks(IUIActions instance)
-        {
-            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IUIActions instance)
-        {
-            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public UIActions @UI => new UIActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -439,12 +390,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     public interface ICamerasActions
     {
         void OnMirarAbajo(InputAction.CallbackContext context);
+        void OnToggleMovil(InputAction.CallbackContext context);
         void OnMirarArriba(InputAction.CallbackContext context);
         void OnGirarDerecha(InputAction.CallbackContext context);
         void OnGirarIzquierda(InputAction.CallbackContext context);
-    }
-    public interface IUIActions
-    {
-        void OnToggleMovil(InputAction.CallbackContext context);
     }
 }

@@ -15,6 +15,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ToggleMovil",
+                    "type": "Button",
+                    "id": "e1c382f5-f1ed-4976-97bf-f1b0cf7d8878",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MirarArriba",
                     "type": "Button",
                     "id": "bee3a4d2-6d73-4164-ae8d-8e0b38f7459d",
@@ -56,6 +65,17 @@
                 },
                 {
                     "name": "",
+                    "id": "989730b8-c626-4a88-b4cb-a6a695ff74e2",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleMovil",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "39d0cd94-9426-4ab1-a176-47fd50d2faf4",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -84,34 +104,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "GirarIzquierda",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "272f6d14-89ba-496f-b7ff-215263d3219f",
-            "actions": [
-                {
-                    "name": "ToggleMovil",
-                    "type": "Button",
-                    "id": "33b7a2ff-39ef-41eb-94a3-3a7a3ef1b8df",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "62428e77-e4b3-4473-8e12-0044828b7394",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleMovil",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

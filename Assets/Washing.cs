@@ -3,7 +3,7 @@ using UnityEngine;
 public class Washing : MonoBehaviour
 {
     private float elapsed;
-    private bool active, first, oven;
+    public bool active, first, oven;
     public AudioSource audio, centrif, abrir;
     public bool completada;
 

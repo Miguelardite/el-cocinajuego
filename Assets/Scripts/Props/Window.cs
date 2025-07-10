@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Window : MonoBehaviour
 {
-    bool isOpen = false;
+    public bool isOpen = false;
 
     private void Awake()
     {

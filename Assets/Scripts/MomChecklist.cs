@@ -39,25 +39,29 @@ public class MomChecklist : MonoBehaviour
         //mira si presiona el espacio y si el panel de dialogo esta activo
         if (Input.GetKeyDown(KeyCode.Return) && !didDialogueStart)
         {
-            CameraMovement.instance.canMove = false;
-            HoldManager.Instance.canGrab = false;
-
-            foreach (Collider2D collider in colliders)
-            {
-                collider.enabled = false;
-            }
-            CameraMovement.instance.SwitchCamera(CameraMovement.instance.cameras[3]);
-            CameraMovement.instance.blinkScript.Blink(3);
-            StartDialogue();
         }
         else if (Input.GetKeyDown(KeyCode.Return) && DialogueText.text == MomText[lineIndex])
         {
             NextDialogueLine();
         }
     }
+    public void StartMom()
+    {
+        CameraMovement.instance.canMove = false;
+        HoldManager.Instance.canGrab = false;
+
+        foreach (Collider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        CameraMovement.instance.SwitchCamera(CameraMovement.instance.cameras[3]);
+        CameraMovement.instance.blinkScript.Blink(3);
+        CheckThings();
+    }
 
     public void CheckThings()
     {
+        Debug.Log("Checking things...");
         if (pollo.GetComponent<Chicken>().frozenPercent > 0)
         {
             ChickenCooked = 0; // Chicken is frozen
@@ -75,16 +79,19 @@ public class MomChecklist : MonoBehaviour
             ChickenCooked = 3; // Chicken is burnt
         }
         ChickenSeasoned = Convert.ToInt32(pollo.GetComponent<Chicken>().seasoning);
-        FanOn = ventilador.GetComponent<PropGeneric>().isActive;
-        WashingMachineOn = lavadora.GetComponent<PropGeneric>().isActive;
-        TrashTakenOut = basura.GetComponent<PropGeneric>().isActive;
-        FridgeClosed = nevera.GetComponent<PropGeneric>().isActive;
-        FurnaceClosed = horno.GetComponent<PropGeneric>().isActive;
-        MicrowaveClosed = microondas.GetComponent<PropGeneric>().isActive;
-        WindowClosed = ventana.GetComponent<PropGeneric>().isActive;
+        FanOn = ventilador.GetComponent<Fan>().isOn;
+        WashingMachineOn = lavadora.GetComponent<Washing>().completada;
+        TrashTakenOut = basura.GetComponent<TrashCan>().isOpen;
+        FridgeClosed = !nevera.GetComponent<Fridge>().isOn;
+        FurnaceClosed = !horno.GetComponent<Oven>().isOn;
+        MicrowaveClosed = !microondas.GetComponent<Defroster>().isOn;
+        WindowClosed = !ventana.GetComponent<Window>().isOpen;
+        StartDialogue();
+
     }
     public void StartDialogue()
     {
+        Debug.Log("Starting dialogue...");
         SendText();
         DialoguePanel.SetActive(true);
         didDialogueStart = true;
@@ -134,6 +141,7 @@ public class MomChecklist : MonoBehaviour
 
     public void SendText()
     {
+        Debug.Log("Sending text to mom...");
         MomText[0] = "I'm home darling! Did you do what I told you? How is the chicken?\n";
         errors = 0;
         if (ChickenCooked == 0)

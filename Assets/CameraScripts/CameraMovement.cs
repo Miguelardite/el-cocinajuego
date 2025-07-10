@@ -14,6 +14,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
     public List<CinemachineCamera> cameras;
     public int currentCameraIndex;
     public BlinkScript blinkScript;
+    public ScriptMovil scriptMovil;
     public bool canMove = true;
 
     public static CameraMovement instance;
@@ -106,5 +107,11 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
                 blinkScript.Blink(currentCameraIndex);
             }
         }
+    }
+
+    public void OnToggleMovil(InputAction.CallbackContext context)
+    {
+        Debug.Log("espacio");
+        scriptMovil.OnToggleMovil();
     }
 }

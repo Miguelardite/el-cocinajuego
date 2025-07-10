@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class PropGeneric : MonoBehaviour
 {
-    internal bool isActive;
+    internal bool isOn;
     public string propMisionName;
     public string tagChicken = "CanDropChickenHere";
     public GameObject chicken;
@@ -14,9 +14,9 @@ public abstract class PropGeneric : MonoBehaviour
     {
         if (HoldManager.Instance.heldObject == null)
         {
-            isActive = !isActive;
+            isOn = !isOn;
 
-            if (isActive)
+            if (isOn)
             {
                 Debug.Log("Abierto");
                 door.Play();

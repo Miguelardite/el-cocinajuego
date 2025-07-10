@@ -8,7 +8,7 @@ public class Oven : PropGeneric
     public AudioSource cook;
     public void Awake()
     {
-        isActive = false; // Activo = abierto e inactivo = cerrado
+        isOn = false; // Activo = abierto e inactivo = cerrado
         cookChicken = false;
         first = true;
     }
@@ -25,7 +25,7 @@ public class Oven : PropGeneric
     }
     private void Update()
     {
-        if (cookChicken && !isActive && chicken.GetComponent<Chicken>().frozenPercent <= 0)
+        if (cookChicken && !isOn && chicken.GetComponent<Chicken>().frozenPercent <= 0)
         {
             chicken.GetComponent<Chicken>().cookingPercent += Time.deltaTime;
 
