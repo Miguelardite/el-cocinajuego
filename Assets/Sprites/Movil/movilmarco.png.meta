@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      movilmarco_0: 4169106288892156647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

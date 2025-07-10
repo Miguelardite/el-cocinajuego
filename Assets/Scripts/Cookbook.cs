@@ -8,7 +8,7 @@ public class Cookbook : MonoBehaviour
     private void Awake()
     {
         //get all colliders in the scene
-        colliders = FindObjectsOfType<Collider2D>();
+        colliders = FindObjectsByType<Collider2D>(FindObjectsSortMode.None);
     }
     public void OpenCookbook()
     {
