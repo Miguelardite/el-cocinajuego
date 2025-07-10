@@ -111,7 +111,10 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
 
     public void OnToggleMovil(InputAction.CallbackContext context)
     {
-        Debug.Log("espacio");
-        scriptMovil.OnToggleMovil();
+        if (!arriba.gameObject.activeSelf)
+        {
+            Debug.Log("espacio");
+            scriptMovil.OnToggleMovil();
+        }
     }
 }
