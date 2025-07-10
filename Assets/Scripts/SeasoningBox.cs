@@ -15,7 +15,7 @@ public class SeasoningBox : MonoBehaviour
     {
         //click derecho para abrir la caja de condimentos
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && HoldManager.Instance.canGrab)
         {
             if (followMouse)
             {

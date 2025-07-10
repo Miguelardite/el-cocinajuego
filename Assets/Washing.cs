@@ -7,6 +7,8 @@ public class Washing : MonoBehaviour
     public AudioSource audio, centrif, abrir;
     public bool completada;
 
+    public GameObject cover;
+
     public void iniciaContador()
     {
         elapsed = 0f;
@@ -19,6 +21,7 @@ public class Washing : MonoBehaviour
         active = false;
         completada = false;
         oven = false;
+        cover.SetActive(false);
     }
 
     void Update()
@@ -44,7 +47,7 @@ public class Washing : MonoBehaviour
             completada = true;
             if (audio != null) audio.Stop();
             if (abrir != null) abrir.Play();
-            //añadir cambio de sprite, animacion, lo que sea
+            cover.SetActive(true);
         }
     }
 }

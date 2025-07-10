@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fb12e1732b74b0f4881fb954c64cc1dd
+guid: 3dc33eebed32ad142b1150db3af45362
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5698258561632133570
-    second: pared_cocina_0
+      213: -7829668669738954275
+    second: pared_lavadora_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pared_cocina_0
+      name: pared_lavadora_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3e96936708bbe0b0800000000000000
-      internalID: -5698258561632133570
+      spriteID: dd1543704dd675390800000000000000
+      internalID: -7829668669738954275
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pared_cocina_0: -5698258561632133570
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

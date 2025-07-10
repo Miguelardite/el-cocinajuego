@@ -14,12 +14,16 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
     public List<CinemachineCamera> cameras;
     public int currentCameraIndex;
     public BlinkScript blinkScript;
+    public bool canMove = true;
 
-
-
+    public static CameraMovement instance;
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         cameras = new List<CinemachineCamera>
         {
             frontal,
@@ -43,7 +47,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
 
     public void OnMirarArriba(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canMove)
         {
             if (!arriba.gameObject.activeSelf)
             {
@@ -55,7 +59,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
     }
     public void OnMirarAbajo(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canMove)
         {
             if (arriba.gameObject.activeSelf)
             {
@@ -67,7 +71,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
     }
     public void OnGirarDerecha(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canMove)
         {
             if (!arriba.gameObject.activeSelf)
             {
@@ -86,7 +90,7 @@ public class CameraMovement : MonoBehaviour, InputSystem_Actions.ICamerasActions
     }
     public void OnGirarIzquierda(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canMove)
         {
             if (!arriba.gameObject.activeSelf)
             {

@@ -8,6 +8,8 @@ public abstract class PropGeneric : MonoBehaviour
     public GameObject chicken;
     public Sprite[] sprites;
     public AudioSource door;
+
+    public Vector3 pivotPoint;
     public void OnMouseDown()
     {
         if (HoldManager.Instance.heldObject == null)

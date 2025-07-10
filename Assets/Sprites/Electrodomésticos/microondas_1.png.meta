@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      microondas_1_0: 1331631624984231558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

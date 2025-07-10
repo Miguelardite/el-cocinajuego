@@ -16,7 +16,7 @@ public class Chicken : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && HoldManager.Instance.canGrab)
         {
             SetCursor();
             if (Vector2.Distance(transform.position, HoldManager.Instance.mouseWorldPos) < 3f)
@@ -46,7 +46,14 @@ public class Chicken : MonoBehaviour
                         if (collider.CompareTag("CanDropChickenHere"))
                         {
                             transform.SetParent(collider.transform);
-                            transform.position = collider.transform.position;
+                            if (collider.GetComponent<PropGeneric>() != null)
+                            {
+                                transform.localPosition = collider.GetComponent<PropGeneric>().pivotPoint;
+                            }
+                            else
+                            {
+                                transform.localPosition = Vector3.zero;
+                            }
                             followMouse = false;
                             dropped = true;
                             Debug.Log("Pollo soltado en: " + collider.name);

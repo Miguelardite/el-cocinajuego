@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: fb12e1732b74b0f4881fb954c64cc1dd
+guid: 7441569edf6e03047bb68f89fca62a78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5698258561632133570
-    second: pared_cocina_0
+      213: 7313885059928705074
+    second: tapa_lavadora_0
+  - first:
+      213: -8650224652575614601
+    second: tapa_lavadora_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pared_cocina_0
+      name: tapa_lavadora_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        y: 27
+        width: 432
+        height: 276
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3e96936708bbe0b0800000000000000
-      internalID: -5698258561632133570
+      spriteID: 238461d16b3208560800000000000000
+      internalID: 7313885059928705074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tapa_lavadora_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 109
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77957e3628a34f780800000000000000
+      internalID: -8650224652575614601
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pared_cocina_0: -5698258561632133570
+      tapa_lavadora_0: 7313885059928705074
+      tapa_lavadora_1: -8650224652575614601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
