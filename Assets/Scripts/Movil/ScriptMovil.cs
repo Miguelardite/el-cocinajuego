@@ -16,6 +16,7 @@ public class ScriptMovil : MonoBehaviour
     public GameObject wassap;
     public GameObject postIt;
     public TextMeshProUGUI hora;
+    public AudioSource notif;
     public Collider2D[] colliders;
     [SerializeField]
     private float elapsed;
@@ -156,9 +157,10 @@ public class ScriptMovil : MonoBehaviour
             
             int aux = (int)elapsed / 20;
             hora.text = horas[aux];
-            if (elapsed >= 90f && !basura)
+            if (elapsed >= 20f && !basura)
             {
                 textos.Add("-Saca la basura");
+                notif.Play();
                 basura = true;
             }
             //Mas tareas con el tiempo? 
