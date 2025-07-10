@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pared_lavadora_0: -7829668669738954275
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
