@@ -16,7 +16,7 @@ public class ScriptMovil : MonoBehaviour
     public GameObject wassap;
     public GameObject postIt;
     public TextMeshProUGUI hora;
-    public AudioSource notif;
+    public AudioSource notif, catMusic;
     public Collider2D[] colliders;
     [SerializeField]
     private float elapsed;
@@ -54,6 +54,7 @@ public class ScriptMovil : MonoBehaviour
         menu.SetActive(false);
         tistos.SetActive(true);
         wassap.SetActive(false);
+        catMusic.Play();
     }
     public void GoToMenu()
     {
@@ -61,6 +62,10 @@ public class ScriptMovil : MonoBehaviour
         menu.SetActive(true);
         tistos.SetActive(false);
         wassap.SetActive(false);
+        if (catMusic.isPlaying)
+        {
+            catMusic.Stop();
+        }
     }
     public void OnToggleMovil()
     {
