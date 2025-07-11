@@ -9,7 +9,7 @@ public class StartScreen : MonoBehaviour
     public TextMeshProUGUI spaceText;
     public float blinkSpeed = 1.5f;
     private float alpha = 1f;
-    private bool fadingOut = true;
+    private bool fadingOut = true, started = false;
 
     public string scene;
 
@@ -17,9 +17,9 @@ public class StartScreen : MonoBehaviour
     {
         Blink();
         // Check for space key press to start the game
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !started)
         {
-            StartGame();
+            StartCoroutine(StartGame());
         }
     }
     void Blink()
@@ -50,8 +50,10 @@ public class StartScreen : MonoBehaviour
         currentColor.a = alpha;
         spaceText.color = currentColor;
     }
-    void StartGame()
+    IEnumerator StartGame()
     {
+        yield return new WaitForSeconds(0.5f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        started = true;
     }
 }
