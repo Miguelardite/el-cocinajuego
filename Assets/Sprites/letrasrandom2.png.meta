@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 54ec022b00f7d69459185ced318b8151
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5812139047154362001
+    second: letrasrandom2_0
+  - first:
+      213: 1902675478032312358
+    second: letrasrandom2_1
+  - first:
+      213: 456344006300088097
+    second: letrasrandom2_2
+  - first:
+      213: 3740778325626633678
+    second: letrasrandom2_3
+  - first:
+      213: -3796417238421173465
+    second: letrasrandom2_4
+  - first:
+      213: 4660275149743834579
+    second: letrasrandom2_5
+  - first:
+      213: 3937531591007364303
+    second: letrasrandom2_6
+  - first:
+      213: -3220403036114957386
+    second: letrasrandom2_7
+  - first:
+      213: 648038183493022507
+    second: letrasrandom2_8
+  - first:
+      213: 4219831446895417042
+    second: letrasrandom2_9
+  - first:
+      213: 3135679910378931530
+    second: letrasrandom2_10
+  - first:
+      213: 7903910152175809798
+    second: letrasrandom2_11
+  - first:
+      213: 8410327021492420943
+    second: letrasrandom2_12
+  - first:
+      213: 8790868723662423141
+    second: letrasrandom2_13
+  - first:
+      213: -6159428824490864642
+    second: letrasrandom2_14
+  - first:
+      213: 7952751416393488278
+    second: letrasrandom2_15
+  - first:
+      213: -6161671805591376222
+    second: letrasrandom2_16
+  - first:
+      213: -535438029790781434
+    second: letrasrandom2_17
+  - first:
+      213: 1873519828120162955
+    second: letrasrandom2_18
+  - first:
+      213: -3382349481584565907
+    second: letrasrandom2_19
+  - first:
+      213: 63992884006495739
+    second: letrasrandom2_20
+  - first:
+      213: -4046637999784064955
+    second: letrasrandom2_21
+  - first:
+      213: 4781911489101663540
+    second: letrasrandom2_22
+  - first:
+      213: 4684566657113822783
+    second: letrasrandom2_23
+  - first:
+      213: -3046457751084763479
+    second: letrasrandom2_24
+  - first:
+      213: 4144181468065847854
+    second: letrasrandom2_25
+  - first:
+      213: -3846347581289509253
+    second: letrasrandom2_26
+  - first:
+      213: 23338109150315639
+    second: letrasrandom2_27
+  - first:
+      213: 399183820080716592
+    second: letrasrandom2_28
+  - first:
+      213: -3618265556021709697
+    second: letrasrandom2_29
+  - first:
+      213: -6809792829919142716
+    second: letrasrandom2_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: letrasrandom2_0
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 30
+        width: 12
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19620da5badd8a050800000000000000
+      internalID: 5812139047154362001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_1
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 79
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62866f63449a76a10800000000000000
+      internalID: 1902675478032312358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_2
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 69
+        width: 29
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12735e6b472455600800000000000000
+      internalID: 456344006300088097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 43
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecdb472511ae9e330800000000000000
+      internalID: 3740778325626633678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 30
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b8cbcc2aa605bc0800000000000000
+      internalID: -3796417238421173465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 60
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5cf08be8f9ca040800000000000000
+      internalID: 4660275149743834579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 60
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc46fddbe1ce4a630800000000000000
+      internalID: 3937531591007364303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 30
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb47c64084de43d0800000000000000
+      internalID: -3220403036114957386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_8
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 30
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23bdff5b4b4ef800800000000000000
+      internalID: 648038183493022507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_9
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 63
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d65934e75adf8a30800000000000000
+      internalID: 4219831446895417042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_10
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 43
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a450773d34c248b20800000000000000
+      internalID: 3135679910378931530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_11
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 67
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605fa0d186450bd60800000000000000
+      internalID: 7903910152175809798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_12
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 30
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f41cce0cddb77b470800000000000000
+      internalID: 8410327021492420943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_13
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 30
+        width: 46
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5648df437807ff970800000000000000
+      internalID: 8790868723662423141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_14
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 55
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff8be04e10558aa0800000000000000
+      internalID: -6159428824490864642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_15
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 55
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6975e191749dd5e60800000000000000
+      internalID: 7952751416393488278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_16
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 30
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aeaf2583285d7aa0800000000000000
+      internalID: -6161671805591376222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_17
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 30
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600e513e2fdb198f0800000000000000
+      internalID: -535438029790781434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_18
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 29
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b82d0ca7b54100a10800000000000000
+      internalID: 1873519828120162955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_19
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 52
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61ece3211b7f01d0800000000000000
+      internalID: -3382349481584565907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_20
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 48
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf52c5f503953e000800000000000000
+      internalID: 63992884006495739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_21
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 41
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5480640ed2477d7c0800000000000000
+      internalID: -4046637999784064955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_22
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 30
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43d8347e923cc5240800000000000000
+      internalID: 4781911489101663540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_23
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 48
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3698e30e8ce20140800000000000000
+      internalID: 4684566657113822783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_24
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 40
+        width: 50
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a67b53f0dec8b5d0800000000000000
+      internalID: -3046457751084763479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_25
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 48
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a52d0a617138930800000000000000
+      internalID: 4144181468065847854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_26
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 29
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e4e8ee0470f9ac0800000000000000
+      internalID: -3846347581289509253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 18
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77442a9f2e9e25000800000000000000
+      internalID: 23338109150315639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_28
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 30
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b9ef3c19f2a8500800000000000000
+      internalID: 399183820080716592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_29
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 30
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f747b4ea5a659cdc0800000000000000
+      internalID: -3618265556021709697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: letrasrandom2_30
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 30
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ccdaa24081ce71a0800000000000000
+      internalID: -6809792829919142716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      letrasrandom2_0: 5812139047154362001
+      letrasrandom2_1: 1902675478032312358
+      letrasrandom2_10: 3135679910378931530
+      letrasrandom2_11: 7903910152175809798
+      letrasrandom2_12: 8410327021492420943
+      letrasrandom2_13: 8790868723662423141
+      letrasrandom2_14: -6159428824490864642
+      letrasrandom2_15: 7952751416393488278
+      letrasrandom2_16: -6161671805591376222
+      letrasrandom2_17: -535438029790781434
+      letrasrandom2_18: 1873519828120162955
+      letrasrandom2_19: -3382349481584565907
+      letrasrandom2_2: 456344006300088097
+      letrasrandom2_20: 63992884006495739
+      letrasrandom2_21: -4046637999784064955
+      letrasrandom2_22: 4781911489101663540
+      letrasrandom2_23: 4684566657113822783
+      letrasrandom2_24: -3046457751084763479
+      letrasrandom2_25: 4144181468065847854
+      letrasrandom2_26: -3846347581289509253
+      letrasrandom2_27: 23338109150315639
+      letrasrandom2_28: 399183820080716592
+      letrasrandom2_29: -3618265556021709697
+      letrasrandom2_3: 3740778325626633678
+      letrasrandom2_30: -6809792829919142716
+      letrasrandom2_4: -3796417238421173465
+      letrasrandom2_5: 4660275149743834579
+      letrasrandom2_6: 3937531591007364303
+      letrasrandom2_7: -3220403036114957386
+      letrasrandom2_8: 648038183493022507
+      letrasrandom2_9: 4219831446895417042
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

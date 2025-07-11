@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     {
         isOpen = false;
     }
-    public void OnMouseDown()
+    public void ChangeDoor()
     {
         isOpen = !isOpen;
         if (isOpen)

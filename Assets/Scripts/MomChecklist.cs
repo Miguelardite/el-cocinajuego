@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MomChecklist : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class MomChecklist : MonoBehaviour
     public GameObject horno;
     public GameObject microondas;
     public GameObject ventana;
+    public GameObject puerta;
 
     public int ChickenCooked = 0;
     public int ChickenSeasoned = 0;
@@ -86,6 +88,7 @@ public class MomChecklist : MonoBehaviour
         FurnaceClosed = !horno.GetComponent<Oven>().isOn;
         MicrowaveClosed = !microondas.GetComponent<Defroster>().isOn;
         WindowClosed = !ventana.GetComponent<Window>().isOpen;
+        puerta.GetComponent<Door>().ChangeDoor();
         StartDialogue();
 
     }
@@ -110,6 +113,8 @@ public class MomChecklist : MonoBehaviour
             DialoguePanel.SetActive(false);
             didDialogueStart = false;
             lineIndex = 0;
+            //goto scene inicio
+            SceneManager.LoadScene("Inicio");
         }
     }
 
@@ -130,19 +135,19 @@ public class MomChecklist : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
         colliders = FindObjectsOfType<Collider2D>();
+        MomText = new List<string>();
     }
 
     public void SendText()
     {
         Debug.Log("Sending text to mom...");
-        MomText[0] = "I'm home darling! Did you do what I told you? How is the chicken?\n";
+        MomText.Add("I'm home darling! Did you do what I told you? How is the chicken?\n");
         errors = 0;
         if (ChickenCooked == 0)
         {
@@ -210,11 +215,11 @@ public class MomChecklist : MonoBehaviour
         {
             if (errors == 0)
             {
-                MomText.Add("But you didn't take out the trash, I can smell it from here!\n");
+                MomText.Add("But you didn't close the trash, I can smell it from here!\n");
             }
             else
             {
-                MomText.Add("And you didn't take out the trash, I can smell it from here!\n");
+                MomText.Add("And you didn't close the trash, I can smell it from here!\n");
             }
             errors++;
         }

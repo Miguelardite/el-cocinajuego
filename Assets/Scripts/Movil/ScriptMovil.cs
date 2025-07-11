@@ -10,7 +10,7 @@ public class ScriptMovil : MonoBehaviour
     public Vector3 hidePosition;
     public bool isMovilActive = false;
     public bool canMove = true;
-    private InputSystem_Actions inputActions;
+    public GameObject cookbookcanvas;
     public GameObject menu;
     public GameObject tistos;
     public GameObject wassap;
@@ -28,11 +28,10 @@ public class ScriptMovil : MonoBehaviour
     private void Awake()
     {
         colliders = FindObjectsOfType<Collider2D>();
-        // Set the initial position of the phone
         phone.transform.localPosition = hidePosition;
         GoToMenu();
-        textos.Add("-Cocina el pollo");
-        textos.Add("-Recoge la lavadora");
+        textos.Add("-Coock the chicken");
+        textos.Add("-Turn off the washing machine");
         elapsed = 0f;
         basura = false;
         ventilador = false;
@@ -70,7 +69,7 @@ public class ScriptMovil : MonoBehaviour
     }
     public void OnToggleMovil()
     {
-        if (canMove && elapsed <299f)
+        if (canMove && elapsed <299f&&!cookbookcanvas.gameObject.activeSelf)
         {
             canMove = false;
             Debug.Log("Toggle Movil Input Action Triggered");
@@ -165,19 +164,19 @@ public class ScriptMovil : MonoBehaviour
             hora.text = horas[aux];
             if (elapsed >= 90 && !ventilador)
             {
-                textos.Add("-Deja apagado el ventilador");
+                textos.Add("-Turn off the fan");
                 notif.Play();
                 ventilador = true;
             }
             if (elapsed >= 150 && !ventana)
             {
-                textos.Add("-Cierra la ventana");
+                textos.Add("-Open the window");
                 notif.Play();
                 ventana = true;
             }
             if (elapsed >= 180 && !basura)
             {
-                textos.Add("-Saca la basura");
+                textos.Add("-Close the trash");
                 notif.Play();
                 basura = true;
             }
