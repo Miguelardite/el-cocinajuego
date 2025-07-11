@@ -27,7 +27,7 @@ public class Oven : PropGeneric
     {
         if (cookChicken && !isOn && chicken.GetComponent<Chicken>().frozenPercent <= 0)
         {
-            chicken.GetComponent<Chicken>().cookingPercent += Time.deltaTime;
+            chicken.GetComponent<Chicken>().cookingPercent += Time.deltaTime/2;
 
             if (first)
             {

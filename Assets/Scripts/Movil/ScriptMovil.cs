@@ -30,7 +30,7 @@ public class ScriptMovil : MonoBehaviour
         colliders = FindObjectsOfType<Collider2D>();
         phone.transform.localPosition = hidePosition;
         GoToMenu();
-        textos.Add("-Coock the chicken");
+        textos.Add("-Cook the chicken");
         textos.Add("-Turn off the washing machine");
         elapsed = 0f;
         basura = false;
