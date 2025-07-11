@@ -3247,6 +3247,8 @@ MonoBehaviour:
   colliders: []
   elapsed: 0
   basura: 0
+  ventilador: 0
+  ventana: 0
   finish: 0
 --- !u!114 &833534855
 MonoBehaviour:

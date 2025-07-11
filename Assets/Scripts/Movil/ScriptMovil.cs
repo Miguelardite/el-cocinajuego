@@ -20,7 +20,7 @@ public class ScriptMovil : MonoBehaviour
     public Collider2D[] colliders;
     [SerializeField]
     private float elapsed;
-    public bool basura;
+    public bool basura, ventilador, ventana;
     public bool finish = false;
     private List<string> textos = new ();
     private string[] horas = { "18:30", "18:31", "18:32", "18:33", "18:34", "18:35", "18:36", "18:37", "18:38", "18:39", "18:40", "18:41", "18:42", "18:43", "18:44" };
@@ -32,10 +32,11 @@ public class ScriptMovil : MonoBehaviour
         phone.transform.localPosition = hidePosition;
         GoToMenu();
         textos.Add("-Cocina el pollo");
-        textos.Add("-Deja apagado el ventilador");
         textos.Add("-Recoge la lavadora");
         elapsed = 0f;
         basura = false;
+        ventilador = false;
+        ventana = false;
     }
 
     public void GoToWsp()
@@ -162,7 +163,19 @@ public class ScriptMovil : MonoBehaviour
             
             int aux = (int)elapsed / 20;
             hora.text = horas[aux];
-            if (elapsed >= 20f && !basura)
+            if (elapsed >= 90 && !ventilador)
+            {
+                textos.Add("-Deja apagado el ventilador");
+                notif.Play();
+                ventilador = true;
+            }
+            if (elapsed >= 150 && !ventana)
+            {
+                textos.Add("-Cierra la ventana");
+                notif.Play();
+                ventana = true;
+            }
+            if (elapsed >= 180 && !basura)
             {
                 textos.Add("-Saca la basura");
                 notif.Play();
@@ -170,7 +183,7 @@ public class ScriptMovil : MonoBehaviour
             }
             //Mas tareas con el tiempo? 
         }
-        if (elapsed >= 299f && !finish)
+        if (elapsed >= 300f && !finish)
         {
             if (isMovilActive)
             {
