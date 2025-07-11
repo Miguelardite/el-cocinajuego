@@ -87,7 +87,11 @@ public class Chicken : MonoBehaviour
         }
         else
         {
-            if (cookingPercent > 70)
+            if (seasoning >= 15 && cookingPercent <= 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = sprites[4];
+            }
+            else if (cookingPercent > 70)
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprites[3];
             }

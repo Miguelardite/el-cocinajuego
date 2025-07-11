@@ -7167,7 +7167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992553274745605750, guid: 24779600eba918e4ead7c006a0a3e957, type: 3}
       propertyPath: sprites.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2992553274745605750, guid: 24779600eba918e4ead7c006a0a3e957, type: 3}
       propertyPath: 'sprites.Array.data[0]'
@@ -7185,6 +7185,10 @@ PrefabInstance:
       propertyPath: 'sprites.Array.data[3]'
       value: 
       objectReference: {fileID: -7820111086674484380, guid: f59fe9f259abd3948ac1d1f3e625bb3f, type: 3}
+    - target: {fileID: 2992553274745605750, guid: 24779600eba918e4ead7c006a0a3e957, type: 3}
+      propertyPath: 'sprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a6d8773d87bf2f42a335aa27fba61b8, type: 3}
     - target: {fileID: 6062592480448927425, guid: 24779600eba918e4ead7c006a0a3e957, type: 3}
       propertyPath: m_Sprite
       value: 
