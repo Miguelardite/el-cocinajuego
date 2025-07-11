@@ -5,6 +5,7 @@ public class Door : MonoBehaviour
     bool isOpen = false;
     public Sprite openSprite;
     public Sprite closeSprite;
+    public AudioSource doorSound;
 
     private void Awake()
     {
@@ -16,10 +17,12 @@ public class Door : MonoBehaviour
         if (isOpen)
         {
             GetComponent<SpriteRenderer>().sprite = openSprite;
+            doorSound.Play();
         }
         else
         {
             GetComponent<SpriteRenderer>().sprite = closeSprite;
+            doorSound.Play();
         }
     }
 }

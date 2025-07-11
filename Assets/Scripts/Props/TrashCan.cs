@@ -6,6 +6,7 @@ public class TrashCan : MonoBehaviour
     public bool isOpen = false;
     public Sprite[] sprites;
     public GameObject condimentPrefab;
+    public AudioSource trashSound;
     void Awake()
     {
         trashQuantity = 0;
@@ -17,6 +18,7 @@ public class TrashCan : MonoBehaviour
             isOpen = false;
             GetComponent<SpriteRenderer>().sprite = sprites[0];
             Debug.Log("Trash can closed.");
+            trashSound.Play();
             gameObject.tag = "Untagged";
         }
         else
@@ -24,6 +26,7 @@ public class TrashCan : MonoBehaviour
             isOpen = true;
             GetComponent<SpriteRenderer>().sprite = sprites[1];
             Debug.Log("Trash can opened.");
+            trashSound.Play();
             gameObject.tag = "CanDropCondimentHere";
         }
     }
