@@ -199,7 +199,7 @@ public class MomChecklist : MonoBehaviour
             }
             errors++;
         }
-        if (WashingMachineOn)
+        if (!WashingMachineOn)
         {
             if (errors == 0)
             {
@@ -211,7 +211,7 @@ public class MomChecklist : MonoBehaviour
             }
             errors++;
         }
-        if (!TrashTakenOut)
+        if (TrashTakenOut)
         {
             if (errors == 0)
             {

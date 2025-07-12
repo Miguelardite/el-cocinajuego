@@ -182,7 +182,7 @@ public class ScriptMovil : MonoBehaviour
             }
             //Mas tareas con el tiempo? 
         }
-        if (elapsed >= 300f && !finish)
+        if (elapsed >= 299f && !finish)
         {
             if (isMovilActive)
             {

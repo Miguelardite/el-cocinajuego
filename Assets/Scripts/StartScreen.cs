@@ -3,6 +3,7 @@ using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class StartScreen : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class StartScreen : MonoBehaviour
     public float blinkSpeed = 1.5f;
     private float alpha = 1f;
     private bool fadingOut = true, started = false;
+    public VideoPlayer videoPlayer;
 
     public string scene;
 
@@ -19,7 +21,7 @@ public class StartScreen : MonoBehaviour
         // Check for space key press to start the game
         if (Input.GetKeyDown(KeyCode.Space) && !started)
         {
-            StartCoroutine(StartGame());
+            StartGame();
         }
     }
     void Blink()
@@ -50,10 +52,17 @@ public class StartScreen : MonoBehaviour
         currentColor.a = alpha;
         spaceText.color = currentColor;
     }
-    IEnumerator StartGame()
+    void StartGame()
     {
-        yield return new WaitForSeconds(0.5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
         started = true;
+        if (videoPlayer != null)
+        {
+            videoPlayer.Play();
+            videoPlayer.loopPointReached += LoadScene;
+        }
+    }
+    void LoadScene(VideoPlayer vp)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 }
