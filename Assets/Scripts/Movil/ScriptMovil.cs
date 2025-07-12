@@ -24,6 +24,7 @@ public class ScriptMovil : MonoBehaviour
     public bool finish = false;
     private List<string> textos = new ();
     private string[] horas = { "18:30", "18:31", "18:32", "18:33", "18:34", "18:35", "18:36", "18:37", "18:38", "18:39", "18:40", "18:41", "18:42", "18:43", "18:44" };
+    bool canToggleMovil = true;
 
     private void Awake()
     {
@@ -69,33 +70,42 @@ public class ScriptMovil : MonoBehaviour
     }
     public void OnToggleMovil()
     {
-        if (canMove && elapsed <299f&&!cookbookcanvas.gameObject.activeSelf)
+        if (canToggleMovil)
         {
-            canMove = false;
-            Debug.Log("Toggle Movil Input Action Triggered");
-            if (isMovilActive)
+            canToggleMovil = false;
+            Invoke(nameof(ResetToggleMovil), 0.5f);
+            if (canMove && elapsed < 299f && !cookbookcanvas.gameObject.activeSelf)
             {
-                StartCoroutine(PhoneCoroutine(false));
-                CameraMovement.instance.canMove = true;
-                HoldManager.Instance.canGrab = true;
-                foreach (Collider2D collider in colliders)
+                canMove = false;
+                Debug.Log("Toggle Movil Input Action Triggered");
+                if (isMovilActive)
                 {
-                    collider.enabled = true;
+                    StartCoroutine(PhoneCoroutine(false));
+                    CameraMovement.instance.canMove = true;
+                    HoldManager.Instance.canGrab = true;
+                    foreach (Collider2D collider in colliders)
+                    {
+                        collider.enabled = true;
+                    }
                 }
-            }
-            else
-            {
-                CameraMovement.instance.canMove = false;
-                HoldManager.Instance.canGrab = false;
+                else
+                {
+                    CameraMovement.instance.canMove = false;
+                    HoldManager.Instance.canGrab = false;
 
-                foreach (Collider2D collider in colliders)
-                {
-                    collider.enabled = false;
+                    foreach (Collider2D collider in colliders)
+                    {
+                        collider.enabled = false;
+                    }
+                    GoToMenu();
+                    StartCoroutine(PhoneCoroutine(true));
                 }
-                GoToMenu();
-                StartCoroutine(PhoneCoroutine(true));
             }
         }
+    }
+    private void ResetToggleMovil()
+    {
+        canToggleMovil = true;
     }
     private System.Collections.IEnumerator PhoneCoroutine(bool goingup)
     {
