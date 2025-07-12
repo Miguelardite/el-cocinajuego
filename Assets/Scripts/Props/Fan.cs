@@ -62,7 +62,7 @@ public class Fan : MonoBehaviour
     {
         if (postIt != null && !isOn)
         {
-            postIt.GetComponent<toDoList>().iniciaTarea("Hace calor");
+            postIt.GetComponent<toDoList>().iniciaTarea("- It's hot here");
         }
     }
 }
