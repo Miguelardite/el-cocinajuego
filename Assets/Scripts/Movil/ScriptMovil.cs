@@ -194,6 +194,7 @@ public class ScriptMovil : MonoBehaviour
         }
         if (elapsed >= 299f && !finish)
         {
+            catMusic.Stop();
             if (isMovilActive)
             {
                 StartCoroutine(PhoneCoroutine(false));
